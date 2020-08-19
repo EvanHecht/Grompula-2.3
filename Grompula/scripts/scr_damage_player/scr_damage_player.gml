@@ -26,7 +26,7 @@ function scr_damage_player(argument0, argument1, argument2, argument3) {
 		if(on_hit_function != -1) script_execute(on_hit_function)
 		player.hp -= dmg;
 		player.iframes = player.stat_iframes;
-		scr_screen_shake_add(screen_shake_amount, screen_shake_amount);
+		screen_shake_add(screen_shake_amount, screen_shake_amount);
 	}
 
 

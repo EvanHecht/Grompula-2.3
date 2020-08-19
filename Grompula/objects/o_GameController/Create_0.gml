@@ -8,7 +8,7 @@ randomize();
 
 //Number of Players
 max_number_of_players = 4;
-current_number_of_players = 1;
+current_number_of_players = 2;
 
 create_args[0] = 0;
 create_args[1] = 0;

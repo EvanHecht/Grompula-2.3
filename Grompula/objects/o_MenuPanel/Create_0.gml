@@ -12,7 +12,7 @@ panel_title_draw_x = x + 32;
 panel_title_draw_y = y + 32;
 
 panel_graphic_draw_x = x + (sprite_width/2);
-panel_graphic_draw_y = y + (sprite_height/2);
+panel_graphic_draw_y = y + (sprite_height/2) - 32;
 panel_graphic_xscale = 1;
 panel_graphic_yscale = 1;
 panel_graphic_frame = 0;

@@ -11,7 +11,4 @@ function set_sprite(argument0) {
 	
 	}
 
-
-
-
 }

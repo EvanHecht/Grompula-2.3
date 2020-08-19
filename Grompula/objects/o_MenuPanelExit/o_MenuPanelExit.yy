@@ -24,8 +24,8 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"o_MenuPanelPlay","path":"objects/o_MenuPanelPlay/o_MenuPanelPlay.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"o_MenuPanelPlay","path":"objects/o_MenuPanelPlay/o_MenuPanelPlay.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"o_MenuPanelExit","path":"objects/o_MenuPanelExit/o_MenuPanelExit.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"o_MenuPanelExit","path":"objects/o_MenuPanelExit/o_MenuPanelExit.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -34,7 +34,7 @@
     "path": "folders/Objects/Menu Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "o_MenuPanelPlay",
+  "name": "o_MenuPanelExit",
   "tags": [],
   "resourceType": "GMObject",
 }

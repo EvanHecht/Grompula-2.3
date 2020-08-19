@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Camera Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_screen_shake_add",
+  "name": "scr_screen_shake",
   "tags": [],
   "resourceType": "GMScript",
 }
