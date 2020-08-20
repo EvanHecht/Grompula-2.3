@@ -2,16 +2,12 @@
 ///@param player_obj The id of the player to modify
 ///@param weapon the weapon to switch it to
 ///@param weapon_slot("current"or"backup")
-function set_weapon(argument0, argument1, argument2) {
+function set_weapon(player, weapon, weapon_slot) {
 
 	/* NOTE
 	"current" will set the weapon to the slot the player is currently using.
 	"backup" will set the weapon to the slot the player isnt currently using.
 	*/
-
-	var player = argument0;
-	var weapon = argument1;
-	var weapon_slot = argument2;
 
 	//Error check
 	if(weapon_slot != "current" && weapon_slot != "backup"){

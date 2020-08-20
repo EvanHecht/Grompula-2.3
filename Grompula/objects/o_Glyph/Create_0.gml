@@ -1,5 +1,4 @@
-
-
+//Glyph Variables
 cost = 10;
 interaction_range = 64;
 player_in_range = false;
@@ -25,3 +24,6 @@ glyph_type = irandom_range(1, 2);
 
 //Set depth
 depth = -y;
+
+//Set the sprite to the creation sprite
+set_sprite(spr_glyph_spawn);

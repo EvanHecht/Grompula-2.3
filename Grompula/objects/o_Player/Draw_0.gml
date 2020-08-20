@@ -2,8 +2,6 @@ draw_self()
 
 #region Debug Info
 
-draw_line(x, y, center_x, center_y);
-
 // Turn off debug info by switching to false
 if(false) {
 	

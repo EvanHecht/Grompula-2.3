@@ -2,7 +2,7 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
-  "origin": 0,
+  "origin": 4,
   "preMultiplyAlpha": false,
   "edgeFiltering": false,
   "collisionTolerance": 0,
@@ -14,8 +14,8 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 128,
-  "height": 128,
+  "width": 64,
+  "height": 64,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 8,
   "gridY": 8,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"71e4d597-6b4f-4738-9960-c3c5024e27bd","path":"sprites/spr_player_picture/spr_player_picture.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"71e4d597-6b4f-4738-9960-c3c5024e27bd","path":"sprites/spr_player_picture/spr_player_picture.yy",},"LayerId":{"name":"1cdebff8-4329-4de9-bb5b-64995370d836","path":"sprites/spr_player_picture/spr_player_picture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_player_picture","path":"sprites/spr_player_picture/spr_player_picture.yy",},"resourceVersion":"1.0","name":"71e4d597-6b4f-4738-9960-c3c5024e27bd","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"71e4d597-6b4f-4738-9960-c3c5024e27bd","path":"sprites/spr_ammo_symbol/spr_ammo_symbol.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"71e4d597-6b4f-4738-9960-c3c5024e27bd","path":"sprites/spr_ammo_symbol/spr_ammo_symbol.yy",},"LayerId":{"name":"1cdebff8-4329-4de9-bb5b-64995370d836","path":"sprites/spr_ammo_symbol/spr_ammo_symbol.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_ammo_symbol","path":"sprites/spr_ammo_symbol/spr_ammo_symbol.yy",},"resourceVersion":"1.0","name":"71e4d597-6b4f-4738-9960-c3c5024e27bd","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_player_picture","path":"sprites/spr_player_picture/spr_player_picture.yy",},
+    "spriteId": {"name":"spr_ammo_symbol","path":"sprites/spr_ammo_symbol/spr_ammo_symbol.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 1.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"9c869c5e-424f-4c97-a3a2-c914a85ede6d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"71e4d597-6b4f-4738-9960-c3c5024e27bd","path":"sprites/spr_player_picture/spr_player_picture.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"57bf00c0-5d3c-4d2b-b43c-27f0ce84087d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"71e4d597-6b4f-4738-9960-c3c5024e27bd","path":"sprites/spr_ammo_symbol/spr_ammo_symbol.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -54,13 +54,13 @@
     "backdropHeight": 1080,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 0,
-    "yorigin": 0,
+    "xorigin": 32,
+    "yorigin": 32,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_player_picture","path":"sprites/spr_player_picture/spr_player_picture.yy",},
+    "parent": {"name":"spr_ammo_symbol","path":"sprites/spr_ammo_symbol/spr_ammo_symbol.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_player_picture",
+    "name": "spr_ammo_symbol",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -72,7 +72,7 @@
     "path": "folders/Sprites/UI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_player_picture",
+  "name": "spr_ammo_symbol",
   "tags": [],
   "resourceType": "GMSprite",
 }

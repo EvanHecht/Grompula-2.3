@@ -30,6 +30,9 @@ if(ds_list_find_index(global.map_list, room) != -1){
 	
 	//Enable the upgrade controller
 	o_UpgradeController.state = "active";
+	
+	//Start the hud controller
+	instance_create_depth(0, 0, 0, o_HUDController);
 
 	
 }

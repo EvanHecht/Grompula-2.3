@@ -28,8 +28,6 @@ switch(state){
 	#region "pursuit" state
 	case "pursuit":
 		
-		
-		
 		//Check if can attack
 		if(current_target != -1 && point_distance(center_x, center_y, current_target.center_x, current_target.center_y) <= attack_range){
 			state = "attack";
@@ -117,7 +115,8 @@ switch(state){
 	
 }
 
-
+//Set depth
+depth = -y;
 
 
 //Death

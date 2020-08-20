@@ -1,5 +1,13 @@
-//Useful Macros
+#region Macros
 #macro largest_possible_value 9223372036854775807
+
+//Player Colors
+#macro player_color_1 = make_color_rgb(0, 174, 240);
+#macro player_color_2 = c_yellow;
+#macro player_color_3 = c_fuchsia;
+#macro player_color_4 = c_red;
+
+#endregion
 
 display_set_gui_size(display_get_width(), display_get_height());
 
@@ -8,8 +16,15 @@ randomize();
 
 //Number of Players
 max_number_of_players = 4;
-current_number_of_players = 2;
+current_number_of_players = 4;
 
+//Player colors
+player_color[1] = c_aqua;
+player_color[2] = c_white;
+player_color[3] = c_white;
+player_color[4] = c_white;
+
+//Creation arguments
 create_args[0] = 0;
 create_args[1] = 0;
 create_args[2] = 0;

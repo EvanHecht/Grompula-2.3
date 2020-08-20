@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 331,
-  "bbox_top": 0,
-  "bbox_bottom": 35,
+  "bbox_left": 16,
+  "bbox_right": 315,
+  "bbox_top": 5,
+  "bbox_bottom": 30,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,12 +24,12 @@
   "gridX": 32,
   "gridY": 16,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"5045f975-7893-4f90-9181-bb1304bca0e7","path":"sprites/spr_healthbar_container/spr_healthbar_container.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"5045f975-7893-4f90-9181-bb1304bca0e7","path":"sprites/spr_healthbar_container/spr_healthbar_container.yy",},"LayerId":{"name":"d00e9889-c3ae-4de6-a6f6-2dee78cdfc2f","path":"sprites/spr_healthbar_container/spr_healthbar_container.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_healthbar_container","path":"sprites/spr_healthbar_container/spr_healthbar_container.yy",},"resourceVersion":"1.0","name":"5045f975-7893-4f90-9181-bb1304bca0e7","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"5045f975-7893-4f90-9181-bb1304bca0e7","path":"sprites/spr_healthbar_container_background/spr_healthbar_container_background.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"5045f975-7893-4f90-9181-bb1304bca0e7","path":"sprites/spr_healthbar_container_background/spr_healthbar_container_background.yy",},"LayerId":{"name":"d00e9889-c3ae-4de6-a6f6-2dee78cdfc2f","path":"sprites/spr_healthbar_container_background/spr_healthbar_container_background.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_healthbar_container_background","path":"sprites/spr_healthbar_container_background/spr_healthbar_container_background.yy",},"resourceVersion":"1.0","name":"5045f975-7893-4f90-9181-bb1304bca0e7","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_healthbar_container","path":"sprites/spr_healthbar_container/spr_healthbar_container.yy",},
+    "spriteId": {"name":"spr_healthbar_container_background","path":"sprites/spr_healthbar_container_background/spr_healthbar_container_background.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"60f6ca17-6349-4ebd-a784-0a79bf3f865b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5045f975-7893-4f90-9181-bb1304bca0e7","path":"sprites/spr_healthbar_container/spr_healthbar_container.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"1f1e62f1-d8d9-41f8-bf54-58bde171ec91","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5045f975-7893-4f90-9181-bb1304bca0e7","path":"sprites/spr_healthbar_container_background/spr_healthbar_container_background.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_healthbar_container","path":"sprites/spr_healthbar_container/spr_healthbar_container.yy",},
+    "parent": {"name":"spr_healthbar_container_background","path":"sprites/spr_healthbar_container_background/spr_healthbar_container_background.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_healthbar_container",
+    "name": "spr_healthbar_container_background",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -72,7 +72,7 @@
     "path": "folders/Sprites/UI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_healthbar_container",
+  "name": "spr_healthbar_container_background",
   "tags": [],
   "resourceType": "GMSprite",
 }

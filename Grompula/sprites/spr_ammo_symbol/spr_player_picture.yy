@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_player_picture","path":"sprites/spr_player_picture/spr_player_picture.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_player_picture",
+    "name": "",
     "tags": [],
     "resourceType": "GMSequence",
   },
