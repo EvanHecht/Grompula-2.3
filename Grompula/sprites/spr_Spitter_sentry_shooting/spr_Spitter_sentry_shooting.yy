@@ -85,7 +85,7 @@
   ],
   "parent": {
     "name": "Spitter Sprites",
-    "path": "folders/Sprites/Spitter Sprites.yy",
+    "path": "folders/Sprites/Enemy Sprites/Spitter Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_Spitter_sentry_shooting",

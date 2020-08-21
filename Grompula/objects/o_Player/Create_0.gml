@@ -47,8 +47,6 @@ hp = stat_hp;
 max_hp = 9999;
 min_hp = 1;
 
-
-
 #endregion
 
 
@@ -72,7 +70,7 @@ dead = false;
 state = "idle";
 image_speed = 0;
 hp = 5;
-soul_count = 9999;
+soul_count = 100;
 environmental_damage_timer = 0;
 invincible = false;
 invinciblility_flashing = false;

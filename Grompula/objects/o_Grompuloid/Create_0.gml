@@ -4,10 +4,11 @@ event_inherited();
 movement_speed = 3 * (1 + (o_WaveController.wave * .332));
 current_movement_speed = movement_speed;
 
-falling_speed = 10;
+falling_speed = 20;
 current_falling_speed = falling_speed;
-falling_acceleration = .1;
+falling_acceleration = .25;
 current_falling_acceleration = falling_acceleration;
+landing_screen_shake = 15;
 
 base_hp = 10;
 hp = base_hp;

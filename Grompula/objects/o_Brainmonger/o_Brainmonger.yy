@@ -32,7 +32,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Brainmonger",
-    "path": "folders/Objects/Enemies/Brainmonger.yy",
+    "path": "folders/Objects/Enemy Objects/Brainmonger.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_Brainmonger",

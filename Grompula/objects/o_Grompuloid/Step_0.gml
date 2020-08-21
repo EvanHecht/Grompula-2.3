@@ -1,3 +1,6 @@
+//Do parent event
+event_inherited();
+
 //Update functional variables
 center_x = x;
 center_y = y - 45;
@@ -15,13 +18,34 @@ switch(state){
 	#region "falling" state
 	case "falling":
 		
+		//When landed
 		if(y == target_spawner.y){
-			state = "pursuit";	
-		} else {
+			state = "landed";
+			screen_shake_add(landing_screen_shake, landing_screen_shake);
+			instance_create_depth(x, y, 1, o_EnemyCrater);
+			
+		} 
+		
+		//If not landed, fall
+		else {
 			y = approach(y, target_spawner.y, current_falling_speed);
 			current_falling_speed += current_falling_acceleration;	
 		}
 		
+	break;
+	#endregion
+	
+	#region "landed" state
+	case "landed":
+		
+		//Set the landing sprite
+		set_sprite(spr_grompuloid_landing);
+		
+		//When the landing animation finishes, switch the state to pursuit
+		if(animation_finished()){
+			state = "pursuit";
+		}
+	
 	break;
 	#endregion
 	

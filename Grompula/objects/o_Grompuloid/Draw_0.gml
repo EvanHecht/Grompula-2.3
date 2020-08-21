@@ -1,2 +1,2 @@
-//Draw self
-draw_self();
+//Do parent function
+event_inherited();

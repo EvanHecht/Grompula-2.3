@@ -45,7 +45,7 @@ spitter_stats = ds_map_create();
 ds_map_add(spitter_stats, enemy_spawn_value, 2);
 
 //Add Unit To Data Structures
-ds_list_add(global.enemy_type_list, Spitter);
+//ds_list_add(global.enemy_type_list, Spitter);
 ds_map_add(global.enemy_type_map, Spitter, o_Spitter);
 ds_map_add(global.enemy_stat_map, Spitter, spitter_stats);
 

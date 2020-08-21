@@ -6,7 +6,7 @@ HUD_alpha = 1;
 //Healthbar variables
 healthbar_length = 294;
 healthbar_height = 30;
-healthbar_delayed_color = c_maroon;
+healthbar_delayed_color = c_white;
 healthbar_container_x_offset = 150;
 healthbar_container_y_offset = 15;
 healthbar_x_offset = 186;
@@ -17,9 +17,18 @@ ammo_display_symbol_x_offset = 170;
 ammo_display_symbol_y_offset = 82;
 ammo_display_symbol_x_scale = .75;
 ammo_display_symbol_y_scale = .75;
-ammo_display_x_offset = 245;
+ammo_display_x_offset = 205;
 ammo_display_y_offset = 84;
 ammo_display_color = c_white;
+
+//Soul display variables
+soul_display_symbol_x_offset = 360;
+soul_display_symbol_y_offset = 86;
+soul_display_symbol_x_scale = .4;
+soul_display_symbol_y_scale = .4;
+soul_display_x_offset = 390;
+soul_display_y_offset = 84;
+soul_display_color = c_white;
 
 //Player 1 HUD Specifications
 player_draw_x[1] = 64;

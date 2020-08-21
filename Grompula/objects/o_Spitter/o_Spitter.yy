@@ -32,7 +32,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Spitter",
-    "path": "folders/Objects/Enemies/Spitter.yy",
+    "path": "folders/Objects/Enemy Objects/Spitter.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_Spitter",

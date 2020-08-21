@@ -97,7 +97,7 @@
   ],
   "parent": {
     "name": "Grompuloid Sprites",
-    "path": "folders/Sprites/Grompuloid Sprites.yy",
+    "path": "folders/Sprites/Enemy Sprites/Grompuloid Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_grompuloid_moving",

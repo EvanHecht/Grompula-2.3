@@ -148,7 +148,7 @@
   ],
   "parent": {
     "name": "Brainmonger Sprites",
-    "path": "folders/Sprites/Brainmonger Sprites.yy",
+    "path": "folders/Sprites/Enemy Sprites/Brainmonger Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_Brainmonger_idle",

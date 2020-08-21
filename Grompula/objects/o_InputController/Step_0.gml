@@ -53,6 +53,6 @@ for(var i = 1; i <= o_GameController.current_number_of_players; i++){
 				
 	
 	}
-	show_debug_message("Left Stick: " + string(gamepad_axis_value(current_device, gp_axislh)));
+	//show_debug_message("Left Stick: " + string(gamepad_axis_value(current_device, gp_axislh)));
 }
 

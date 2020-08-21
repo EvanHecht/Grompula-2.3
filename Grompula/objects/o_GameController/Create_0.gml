@@ -16,7 +16,7 @@ randomize();
 
 //Number of Players
 max_number_of_players = 4;
-current_number_of_players = 4;
+current_number_of_players = 1;
 
 //Player colors
 player_color[1] = c_aqua;

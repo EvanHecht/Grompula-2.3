@@ -6,6 +6,7 @@ bite_y = lengthdir_y(20, point_direction(x,y,creator.current_target.x,creator.cu
 
 x = creator.x + bite_x;
 y = creator.y - bite_y_offset + bite_y;
+image_xscale = creator.image_xscale;
 
 attacked = false;
-attack_frame = 4
+attack_frame = 6

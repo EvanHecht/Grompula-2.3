@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Grompuloid",
-    "path": "folders/Objects/Enemies/Grompuloid.yy",
+    "path": "folders/Objects/Enemy Objects/Grompuloid.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_GrompuloidBite",
