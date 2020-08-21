@@ -42,6 +42,7 @@
     {"id":{"name":"spr_lava_map","path":"sprites/spr_lava_map/spr_lava_map.yy",},"order":11,},
     {"id":{"name":"spr_geyser","path":"sprites/spr_geyser/spr_geyser.yy",},"order":12,},
     {"id":{"name":"spr_geyser_active","path":"sprites/spr_geyser_active/spr_geyser_active.yy",},"order":13,},
+    {"id":{"name":"o_Slide","path":"objects/o_Slide/o_Slide.yy",},"order":1,},
     {"id":{"name":"spr_geyser_hitbox","path":"sprites/spr_geyser_hitbox/spr_geyser_hitbox.yy",},"order":14,},
     {"id":{"name":"o_Wheelthing","path":"objects/o_Wheelthing/o_Wheelthing.yy",},"order":0,},
     {"id":{"name":"spr_geyser_base","path":"sprites/spr_geyser_base/spr_geyser_base.yy",},"order":15,},
