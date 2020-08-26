@@ -1,11 +1,8 @@
 #region Macros
-#macro largest_possible_value 9223372036854775807
+
 
 //Player Colors
-#macro player_color_1 = make_color_rgb(0, 174, 240);
-#macro player_color_2 = c_yellow;
-#macro player_color_3 = c_fuchsia;
-#macro player_color_4 = c_red;
+
 
 #endregion
 

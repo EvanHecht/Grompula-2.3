@@ -21,7 +21,7 @@ switch(state){
 		//When landed
 		if(y == target_spawner.y){
 			state = "landed";
-			screen_shake_add(landing_screen_shake, landing_screen_shake);
+			screen_shake_add_until_limit(landing_screen_shake, landing_screen_shake, landing_screen_shake, landing_screen_shake);
 			instance_create_depth(x, y, 1, o_EnemyCrater);
 			
 		} 
