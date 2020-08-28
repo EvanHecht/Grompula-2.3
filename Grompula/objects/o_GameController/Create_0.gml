@@ -37,11 +37,6 @@ ds_list_add(global.map_list, room_Lava_Map);
 //Global Game Variables
 global.enemy_spawn_y = -200;
 
-//Create Persistant Game Objects
-instance_create_depth(0, 0, 0, o_InputController);
-instance_create_depth(0, 0, 0, o_WeaponDatabase);
-instance_create_depth(0, 0, 0, o_EnemyDatabase);
-
 
 //Which room to go to when the game starts
 //var start_room = room_Island_Map

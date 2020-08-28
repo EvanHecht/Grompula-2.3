@@ -1,7 +1,8 @@
 
-if(keyboard_check_pressed(vk_anykey)){
-	last_key_pressed = keyboard_lastkey;
+if(keyboard_check(vk_anykey)){
+	last_key_pressed = input_keycode_to_name(keyboard_lastkey);
 }
+
 draw_set_color(c_white);
 draw_text(100, 100, string(last_key_pressed));
 

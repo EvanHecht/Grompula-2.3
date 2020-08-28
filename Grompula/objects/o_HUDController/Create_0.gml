@@ -49,6 +49,7 @@ draw_direction[3] = 1;
 player_draw_x[4] = display_get_gui_width() - 64;
 player_draw_y[4] = 256;
 draw_direction[4] = -1;
+
 //Healthbar delayed movement values
 healthbar_delayed_value = [5, 5, 5, 5];
 healthbar_delayed_speed = .01;

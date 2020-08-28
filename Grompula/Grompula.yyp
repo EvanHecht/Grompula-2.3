@@ -213,6 +213,7 @@
     {"id":{"name":"spr_house1","path":"sprites/spr_house1/spr_house1.yy",},"order":3,},
     {"id":{"name":"o_Geyser_Right","path":"objects/o_Geyser_Right/o_Geyser_Right.yy",},"order":4,},
     {"id":{"name":"o_Geyser_Hitbox_Right","path":"objects/o_Geyser_Hitbox_Right/o_Geyser_Hitbox_Right.yy",},"order":5,},
+    {"id":{"name":"o_GameInitializer","path":"objects/o_GameInitializer/o_GameInitializer.yy",},"order":8,},
     {"id":{"name":"o_Geyser_Base_Left","path":"objects/o_Geyser_Base_Left/o_Geyser_Base_Left.yy",},"order":6,},
     {"id":{"name":"o_Geyser_Left","path":"objects/o_Geyser_Left/o_Geyser_Left.yy",},"order":7,},
     {"id":{"name":"o_Geyser_Hitbox_Left","path":"objects/o_Geyser_Hitbox_Left/o_Geyser_Hitbox_Left.yy",},"order":8,},
