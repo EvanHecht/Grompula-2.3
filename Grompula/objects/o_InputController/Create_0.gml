@@ -50,13 +50,16 @@ assign_controller_slots();
 */
 
 //Set up the input grid
-input_grid = ds_grid_create(3, 1);
+global.input_grid = ds_grid_create(3, 1);
+#macro input_grid_name 0
+#macro input_grid_code 1
+#macro input_grid_type 2
 input_name_list = ds_list_create(); //Holds the name of every input
 input_code_list = ds_list_create(); //Holds the input code of every input
 input_type_list = ds_list_create(); //Holds the type of input for each entry (Keyboard, Mouse, Controller)
-ds_grid_set(input_grid, 0, 0, input_name_list);
-ds_grid_set(input_grid, 1, 0, input_code_list);
-ds_grid_set(input_grid, 2, 0, input_type_list);
+ds_grid_set(global.input_grid, input_grid_name, 0, input_name_list);
+ds_grid_set(global.input_grid, input_grid_code, 0, input_code_list);
+ds_grid_set(global.input_grid, input_grid_type, 0, input_type_list);
 
 //--------------------------------------------------------------------------------------------------------
 #endregion

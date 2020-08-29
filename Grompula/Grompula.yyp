@@ -167,6 +167,7 @@
     {"id":{"name":"scr_upgrade_dexterity","path":"scripts/scr_upgrade_dexterity/scr_upgrade_dexterity.yy",},"order":0,},
     {"id":{"name":"scr_upgrade_agility","path":"scripts/scr_upgrade_agility/scr_upgrade_agility.yy",},"order":0,},
     {"id":{"name":"scr_upgrade_trigger_finger","path":"scripts/scr_upgrade_trigger_finger/scr_upgrade_trigger_finger.yy",},"order":0,},
+    {"id":{"name":"scr_input_management","path":"scripts/scr_input_management/scr_input_management.yy",},"order":10,},
     {"id":{"name":"scr_upgrade_define","path":"scripts/scr_upgrade_define/scr_upgrade_define.yy",},"order":1,},
     {"id":{"name":"fnt_Debug","path":"fonts/fnt_Debug/fnt_Debug.yy",},"order":0,},
     {"id":{"name":"fnt_upgrade_title","path":"fonts/fnt_upgrade_title/fnt_upgrade_title.yy",},"order":0,},
