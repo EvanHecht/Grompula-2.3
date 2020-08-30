@@ -29,7 +29,7 @@ switch(state){
 				player_in_range = true;
 		
 				//Player Picking Up
-				if(o_InputController.select[i]){
+				if(o_InputController.select_pressed[i]){
 					interacting_player = current_player;
 					state = "aquiring";
 					var angle = point_direction(x, y, interacting_player.player_weapon.x, interacting_player.player_weapon.y) + 180;

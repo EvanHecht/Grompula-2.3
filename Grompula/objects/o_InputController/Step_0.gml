@@ -5,57 +5,98 @@ switch(state){
 	case "input processing":
 	
 	//Check if player 1 is using keyboard
-	var controller_index_modifer = 0;
-	if(player_1_use_keyboard) controller_index_modifer = 1;
+	var controller_index_modifier = 0;
+	if(player_1_use_keyboard) controller_index_modifier = -1;
 
 	//Update Inputs
 	for(var i = 1; i <= o_GameController.current_number_of_players; i++){
-	
-		var current_device = controller_slot_min + i - 1 - controller_index_modifer;
-		
+			
 		//Player 1 Keyboard Controls
 		if(i == 1 && player_1_use_keyboard){
 		
-			move_horizontal[i] = -keyboard_check(ord("A")) + keyboard_check(ord("D"));
-			move_vertical[i] = -keyboard_check(ord("W")) + keyboard_check(ord("S"));
-			move_horizontal_pressed[i] = -keyboard_check_pressed(ord("A")) + keyboard_check_pressed(ord("D"));
-			move_vertical_pressed[i] = -keyboard_check_pressed(ord("W")) + keyboard_check_pressed(ord("S"));
-			right_stick_horizontal[i] = 0;
-			right_stick_vertical[i] = 0;
-			fire[i] = mouse_check_button(mb_left);
-			secondary_fire[i] = mouse_check_button(mb_right);
-			fire_pressed[i] = mouse_check_button_pressed(mb_left);
-			secondary_fire_pressed[i] = mouse_check_button_pressed(mb_right);
-			reload[i] = keyboard_check_pressed(ord("R"));
-			switch_weapons[i] = keyboard_check_pressed(ord("Q"));
-			character_action[i] = keyboard_check_pressed(vk_shift);
-			select[i] = keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space);
+			move_left[i] = read_input(move_left_binding[0], false, -1);
+			move_right[i] = read_input(move_right_binding[0], false, -1);
+			move_up[i] = read_input(move_up_binding[0], false, -1);
+			move_down[i] = read_input(move_down_binding[0], false, -1);
+			move_left_pressed[i] = read_input(move_left_binding[0], true, -1);
+			move_right_pressed[i] = read_input(move_right_binding[0], true, -1);
+			move_up_pressed[i] = read_input(move_up_binding[0], true, -1);
+			move_down_pressed[i] = read_input(move_down_binding[0], true, -1);
+			move_horizontal[i] = -move_left[i] + move_right[i];
+			move_vertical[i] = -move_up[i] + move_down[i];
+			move_horizontal_pressed[i] = -move_left_pressed[i] + move_right_pressed[i];
+			move_vertical_pressed[i] = -move_up_pressed[i] + move_down_pressed[i];
+			right_stick_horizontal[i] = 0; //Keyboard uses mouse instead.
+			right_stick_vertical[i] = 0;//Keyboard uses mouse instead.
+			fire[i] = read_input(fire_binding[0], false, -1);
+			fire_pressed[i] = read_input(fire_binding[0], true, -1);
+			secondary_fire[i] = read_input(secondary_fire_binding[0], false, -1);
+			secondary_fire_pressed[i] = read_input(secondary_fire_binding[0], true, -1);
+			reload[i] = read_input(reload_binding[0], false, -1);
+			reload_pressed[i] = read_input(reload_binding[0], true, -1);
+			switch_weapons[i] = read_input(switch_weapons_binding[0], false, -1);
+			switch_weapons_pressed[i] = read_input(switch_weapons_binding[0], true, -1);
+			character_action[i] = read_input(character_action_binding[0], false, -1);
+			character_action_pressed[i] = read_input(character_action_binding[0], true, -1);
+			select[i] = read_input(select_binding[0], false, -1);
+			select_pressed[i] = read_input(select_binding[0], true, -1);
+			move_horizontal_previous_frame[i] = 0;
+			move_vertical_previous_frame[i] = 0;
 		
 		} 
 	
 		//Controllers Bindings
-		else {
+		else{
+			
+			var current_device_index = controller_slot[i - 1 + controller_index_modifier];
+			
+			move_left[i] = -read_input(move_left_binding[i], false, current_device_index);
+			move_right[i] = read_input(move_right_binding[i], false, current_device_index);
+			move_up[i] = -read_input(move_up_binding[i], false, current_device_index);
+			move_down[i] = read_input(move_down_binding[i], false, current_device_index);
+			move_horizontal[i] = -move_left[i] + move_right[i];
+			move_vertical[i] = -move_up[i] + move_down[i];
+			
+			//Move horizontal | right | left pressed
+			if(move_horizontal[i] != 0 && sign(move_horizontal_previous_frame[i]) != move_horizontal[i]){
+				move_horizontal_pressed[i] = sign(move_horizontal[i]);
+				move_right_pressed[i] = max(0, move_horizontal_pressed[i]);
+				move_left_pressed[i] = min(0, move_horizontal_pressed[i]);
+			} else {
+				move_horizontal_pressed[i] = 0;
+				move_right_pressed[i] = 0;
+				move_left_pressed[i] = 0;
+			}
+			
+			//Move vertical | down | up pressed
+			if(move_vertical[i] != 0 && sign(move_vertical_previous_frame[i]) != move_vertical[i]){
+				move_vertical_pressed[i] = sign(move_vertical[i]);
+				move_down_pressed[i] = max(0, move_vertical_pressed[i]);
+				move_up_pressed[i] = min(0, move_vertical_pressed[i]);
+			} else {
+				move_vertical_pressed[i] = 0;
+				move_down_pressed[i] = 0;
+				move_up_pressed[i] = 0;
+			}
+			
+			right_stick_horizontal[i] = read_input("right stick horizontal", false, current_device_index);
+			right_stick_vertical[i] = read_input("right stick vertical", false, current_device_index);
+			fire[i] = read_input(fire_binding[i], false, current_device_index);
+			fire_pressed[i] = read_input(fire_binding[i], true, current_device_index);
+			secondary_fire[i] = read_input(secondary_fire_binding[i], false, current_device_index);
+			secondary_fire_pressed[i] = read_input(secondary_fire_binding[i], true, current_device_index);
+			reload[i] = read_input(reload_binding[i], false, current_device_index);
+			reload_pressed[i] = read_input(reload_binding[i], true, current_device_index);
+			switch_weapons[i] = read_input(switch_weapons_binding[i], false, current_device_index);
+			switch_weapons_pressed[i] = read_input(switch_weapons_binding[i], true, current_device_index);
+			character_action[i] = read_input(character_action_binding[i], false, current_device_index);
+			character_action_pressed[i] = read_input(character_action_binding[i], true, current_device_index);
+			select[i] = read_input(select_binding[i], false, current_device_index);
+			select_pressed[i] = read_input(select_binding[i], true, current_device_index);
 		
-			move_horizontal[i] = gamepad_axis_value(current_device, gp_axislh);
-			move_vertical[i] = gamepad_axis_value(current_device, gp_axislv);
-			right_stick_horizontal[i] = gamepad_axis_value(current_device, gp_axisrh);
-			right_stick_vertical[i] = gamepad_axis_value(current_device, gp_axisrv);
-			fire[i] = gamepad_button_check(current_device, gp_shoulderrb);
-			secondary_fire[i] = gamepad_button_check(current_device, gp_shoulderlb);
-			fire_pressed[i] = gamepad_button_check_pressed(current_device, gp_shoulderrb);
-			secondary_fire_pressed[i] = gamepad_button_check_pressed(current_device, gp_shoulderlb);
-			reload[i] = gamepad_button_check_pressed(current_device, gp_face3);
-			switch_weapons[i] = gamepad_button_check_pressed(current_device, gp_face4);
-			character_action[i] = gamepad_button_check_pressed(current_device, gp_face1);
-			select[i] = gamepad_button_check_pressed(current_device, gp_face1);
-		
-			//Used for determining if the stick was just moved into the non-neutral position
-			if(previous_frame_horizontal_input[i] == 0) move_horizontal_pressed[i] = sign(gamepad_axis_value(current_device, gp_axislh));
-			else move_horizontal_pressed[i] = 0;
-			if(previous_frame_vertical_input[i] == 0) move_vertical_pressed[i] = sign(gamepad_axis_value(current_device, gp_axislv));
-			move_vertical_pressed[i] = 0;
-			previous_frame_horizontal_input[i] = move_horizontal[i];
-			previous_frame_vertical_input[i] = move_vertical[i];
+			//Store previous frame values for next frame
+			move_horizontal_previous_frame[i] = move_horizontal_pressed[i];
+			move_vertical_previous_frame[i] = move_vertical_pressed[i];
 			
 		}
 	}

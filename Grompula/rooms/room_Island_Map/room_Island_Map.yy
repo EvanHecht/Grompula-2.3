@@ -15,11 +15,9 @@
   "layers": [
     {"instances":[],"visible":false,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":64,"gridY":64,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Controllers","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
-        {"properties":[],"isDnd":false,"objectId":{"name":"o_Glyph","path":"objects/o_Glyph/o_Glyph.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1854.0,"y":1634.0,"resourceVersion":"1.0","name":"inst_4FA62DF9","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"o_Glyph","path":"objects/o_Glyph/o_Glyph.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1854.0,"y":1007.0,"resourceVersion":"1.0","name":"inst_75C5BBB0","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"o_Glyph","path":"objects/o_Glyph/o_Glyph.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1183.0,"y":1304.0,"resourceVersion":"1.0","name":"inst_566FDB17","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"o_Tombstone","path":"objects/o_Tombstone/o_Tombstone.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2464.0,"y":608.0,"resourceVersion":"1.0","name":"inst_50CE2448","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"o_Tombstone","path":"objects/o_Tombstone/o_Tombstone.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":736.0,"y":2048.0,"resourceVersion":"1.0","name":"inst_218FCA1A","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"o_PlayerSpawner2","path":"objects/o_PlayerSpawner2/o_PlayerSpawner2.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1664.0,"y":1536.0,"resourceVersion":"1.0","name":"inst_63DD8759","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"o_PlayerSpawner1","path":"objects/o_PlayerSpawner1/o_PlayerSpawner1.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1536.0,"y":1536.0,"resourceVersion":"1.0","name":"inst_4D3FAF54","tags":[],"resourceType":"GMRInstance",},
@@ -124,6 +122,7 @@
   "inheritCode": false,
   "instanceCreationOrder": [
     {"name":"inst_4D3FAF54","path":"rooms/room_Island_Map/room_Island_Map.yy",},
+    {"name":"inst_63DD8759","path":"rooms/room_Island_Map/room_Island_Map.yy",},
     {"name":"inst_3100DAC0","path":"rooms/room_Island_Map/room_Island_Map.yy",},
     {"name":"inst_5C7CBACC","path":"rooms/room_Island_Map/room_Island_Map.yy",},
     {"name":"inst_52A865AC","path":"rooms/room_Island_Map/room_Island_Map.yy",},
@@ -174,9 +173,6 @@
     {"name":"inst_7E9B3693","path":"rooms/room_Island_Map/room_Island_Map.yy",},
     {"name":"inst_4ADAF38E","path":"rooms/room_Island_Map/room_Island_Map.yy",},
     {"name":"inst_721FC981","path":"rooms/room_Island_Map/room_Island_Map.yy",},
-    {"name":"inst_4FA62DF9","path":"rooms/room_Island_Map/room_Island_Map.yy",},
-    {"name":"inst_75C5BBB0","path":"rooms/room_Island_Map/room_Island_Map.yy",},
-    {"name":"inst_566FDB17","path":"rooms/room_Island_Map/room_Island_Map.yy",},
     {"name":"inst_50CE2448","path":"rooms/room_Island_Map/room_Island_Map.yy",},
     {"name":"inst_218FCA1A","path":"rooms/room_Island_Map/room_Island_Map.yy",},
   ],

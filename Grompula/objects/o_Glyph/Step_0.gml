@@ -35,7 +35,7 @@ switch(state){
 				player_in_range = true;
 		
 				//Player purchasing
-				if(!purchased && o_InputController.select[i] && current_player.soul_count >= cost){
+				if(!purchased && o_InputController.select_pressed[i] && current_player.soul_count >= cost){
 					current_player.soul_count -= cost;
 					purchasing_player = current_player;
 					purchased = true;

@@ -264,9 +264,9 @@
     "children": [],
   },
   "RoomOrder": [
+    {"name":"room_Game_Start","path":"rooms/room_Game_Start/room_Game_Start.yy",},
     {"name":"room_Debug","path":"rooms/room_Debug/room_Debug.yy",},
     {"name":"room_Main_Menu","path":"rooms/room_Main_Menu/room_Main_Menu.yy",},
-    {"name":"room_Game_Start","path":"rooms/room_Game_Start/room_Game_Start.yy",},
     {"name":"room_Island_Map","path":"rooms/room_Island_Map/room_Island_Map.yy",},
     {"name":"room_Lava_Map","path":"rooms/room_Lava_Map/room_Lava_Map.yy",},
     {"name":"room_Town_Map","path":"rooms/room_Town_Map/room_Town_Map.yy",},

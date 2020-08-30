@@ -12,8 +12,7 @@ display_set_gui_size(display_get_width(), display_get_height());
 randomize();
 
 //Number of Players
-max_number_of_players = 4;
-current_number_of_players = 1;
+current_number_of_players = 2;
 
 //Player colors
 player_color[1] = c_aqua;
@@ -39,5 +38,5 @@ global.enemy_spawn_y = -200;
 
 
 //Which room to go to when the game starts
-//var start_room = room_Island_Map
-//room_goto(start_room);
+var start_room = room_Island_Map
+room_goto(start_room);

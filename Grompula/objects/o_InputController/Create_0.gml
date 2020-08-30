@@ -8,18 +8,19 @@ last_key_pressed = "";
 
 #region Assign Controllers To Slots & Gather Information About Them
 
-number_of_controller_slots = 4;
 controller_slot = [-1, -1, -1, -1];
 controller_type = ["No Controller Connected", "No Controller Connected", "No Controller Connected", "No Controller Connected"];
-number_of_gamepad_slots = gamepad_get_device_count();
+number_of_controller_slots = 4;
 
 //This function is called to assign controllers to controller slots.
 function assign_controller_slots(){
 
 	//Loop through all controller slots and find which ones are occupied
 	var current_slot_to_fill = 0;
-	for(var i = 0; i <= number_of_gamepad_slots && current_slot_to_fill < 4; i++){
-	
+	for(var i = 0; i < gamepad_get_device_count() && current_slot_to_fill < 4; i++){
+	 
+		show_debug_message("Slot " + string(i) + ": " + gamepad_get_description(i));
+		
 		//Check if a controller is connected in the slot, and if so, assign it to a slot
 		if(gamepad_is_connected(i)){
 			controller_slot[current_slot_to_fill] = i;
@@ -79,8 +80,8 @@ function input_define(name, code, type){
 //Define all keyboard inputs (Sorted By Keycode)
 input_define("left click", 1, input_type_mouse);
 input_define("right click", 2, input_type_mouse);
-input_define("cancel", 3, input_type_mouse);
-input_define("middle click", 4, input_type_mouse);
+input_define("middle click", 3, input_type_mouse);
+input_define("middle click 2", 4, input_type_mouse);
 input_define("x1 click", 5, input_type_mouse);
 input_define("x2 click", 6, input_type_mouse);
 //Keycode 7 is Undefined.
@@ -249,6 +250,11 @@ input_define("zoom", 251, input_type_keyboard);
 input_define("pa1", 253, input_type_keyboard);
 input_define("oem clear", 254, input_type_keyboard);
 
+//Mouse Scroll (These codes are made up by me)
+input_define("scroll up", 260, input_type_scroll);
+input_define("scroll down", 261, input_type_scroll);
+
+
 //Controller Input Definitions (These codes are made by me)
 input_define("face 1", 300, input_type_controller);
 input_define("face 2", 301, input_type_controller);
@@ -283,23 +289,8 @@ input_define("right stick vertical negative", 327, input_type_controller);
 
 #endregion
 
-#region Define functions for interacting with input
 
-//----------------------------------------------------------------------
-///@description Given a keycode, returns the name of the keycodes input.
-function input_keycode_to_name(keycode){
-	
-	//find the index of the input
-	var index = ds_list_find_index(input_code_list, keycode);
-	
-	//Return the name
-	return ds_list_find_value(input_name_list, index);
-}
-//----------------------------------------------------------------------
-
-#endregion
-
-#region Define The Default Controls
+#region Define The Default Bindings, and Load Any Saved Custom Bindings
 
 //Default Keyboard Controls
 move_left_default_keyboard = "a";
@@ -307,7 +298,7 @@ move_right_default_keyboard = "d";
 move_up_default_keyboard = "w";
 move_down_default_keyboard = "s";
 fire_default_keyboard = "left click";
-secondary_fire_default_keyboard = "right_click";
+secondary_fire_default_keyboard = "right click";
 reload_default_keyboard = "r";
 switch_weapons_default_keyboard = "q";
 character_action_default_keyboard = "space";
@@ -332,36 +323,36 @@ ini_open(controls_config);
 
 //If first time setup, write the default controls to the file
 if(global.first_time_setup){
-for(var slot = 0; slot < number_of_controller_slots + 1; slot++){
+for(var slot = 0; slot <= number_of_controller_slots; slot++){
 	
 	//Load Keyboard Bindings (Slot 0)
 	if(slot == 0){
-		move_left[slot] = ini_write_string("Keyboard Controls", "move_left", move_left_default_keyboard);
-		move_right[slot] = ini_write_string("Keyboard Controls", "move_right", move_right_default_keyboard);
-		move_up[slot] = ini_write_string("Keyboard Controls", "move_up", move_up_default_keyboard);
-		move_down[slot] = ini_write_string("Keyboard Controls", "move_down", move_down_default_keyboard);
-		fire[slot] = ini_write_string("Keyboard Controls", "fire", fire_default_keyboard);
-		secondary_fire[slot] = ini_write_string("Keyboard Controls", "secondary_fire", secondary_fire_default_keyboard);
-		reload[slot] = ini_write_string("Keyboard Controls", "reload", reload_default_keyboard);
-		switch_weapons[slot] = ini_write_string("Keyboard Controls", "switch_weapons", switch_weapons_default_keyboard);
-		character_action[slot] = ini_write_string("Keyboard Controls", "character_action", character_action_default_keyboard);
-		select[slot] = ini_write_string("Keyboard Controls", "select", select_default_keyboard);
-		back[slot] = ini_write_string("Keyboard Controls", "back", back_default_keyboard);
+		move_left_binding[slot] = ini_write_string("Keyboard Controls", "move_left", move_left_default_keyboard);
+		move_right_binding[slot] = ini_write_string("Keyboard Controls", "move_right", move_right_default_keyboard);
+		move_up_binding[slot] = ini_write_string("Keyboard Controls", "move_up", move_up_default_keyboard);
+		move_down_binding[slot] = ini_write_string("Keyboard Controls", "move_down", move_down_default_keyboard);
+		fire_binding[slot] = ini_write_string("Keyboard Controls", "fire", fire_default_keyboard);
+		secondary_fire_binding[slot] = ini_write_string("Keyboard Controls", "secondary_fire", secondary_fire_default_keyboard);
+		reload_binding[slot] = ini_write_string("Keyboard Controls", "reload", reload_default_keyboard);
+		switch_weapons_binding[slot] = ini_write_string("Keyboard Controls", "switch_weapons", switch_weapons_default_keyboard);
+		character_action_binding[slot] = ini_write_string("Keyboard Controls", "character_action", character_action_default_keyboard);
+		select_binding[slot] = ini_write_string("Keyboard Controls", "select", select_default_keyboard);
+		back_binding[slot] = ini_write_string("Keyboard Controls", "back", back_default_keyboard);
 	}
 	
 	//Load Controller Bindings (Slot 1-4)
 	else {
-		move_left[slot] = ini_write_string("Player " + string(slot) + " Controls", "move_left", move_left_default_controller);
-		move_right[slot] = ini_write_string("Player " + string(slot) + " Controls", "move_right", move_right_default_controller);
-		move_up[slot] = ini_write_string("Player " + string(slot) + " Controls", "move_up", move_up_default_controller);
-		move_down[slot] = ini_write_string("Player " + string(slot) + " Controls", "move_down", move_down_default_controller);
-		fire[slot] = ini_write_string("Player " + string(slot) + " Controls", "fire", fire_default_controller);
-		secondary_fire[slot] = ini_write_string("Player " + string(slot) + " Controls", "secondary_fire", secondary_fire_default_controller);
-		reload[slot] = ini_write_string("Player " + string(slot) + " Controls", "reload", reload_default_controller);
-		switch_weapons[slot] = ini_write_string("Player " + string(slot) + " Controls", "switch_weapons", switch_weapons_default_controller);
-		character_action[slot] = ini_write_string("Player " + string(slot) + " Controls", "character_action", character_action_default_controller);
-		select[slot] = ini_write_string("Player " + string(slot) + " Controls", "select", select_default_controller);
-		back[slot] = ini_write_string("Player " + string(slot) + " Controls", "back", back_default_controller);
+		move_left_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "move_left", move_left_default_controller);
+		move_right_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "move_right", move_right_default_controller);
+		move_up_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "move_up", move_up_default_controller);
+		move_down_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "move_down", move_down_default_controller);
+		fire_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "fire", fire_default_controller);
+		secondary_fire_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "secondary_fire", secondary_fire_default_controller);
+		reload_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "reload", reload_default_controller);
+		switch_weapons_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "switch_weapons", switch_weapons_default_controller);
+		character_action_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "character_action", character_action_default_controller);
+		select_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "select", select_default_controller);
+		back_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "back", back_default_controller);
 	}
 	
 }
@@ -369,36 +360,36 @@ for(var slot = 0; slot < number_of_controller_slots + 1; slot++){
 
 
 //Read Saved Controls From File
-for(var slot = 0; slot < number_of_controller_slots + 1; slot++){
+for(var slot = 0; slot <= number_of_controller_slots; slot++){
 	
 	//Load Keyboard Bindings (Slot 0)
 	if(slot == 0){
-		move_left[slot] = ini_read_string("Keyboard Controls", "move_left", move_left_default_keyboard);
-		move_right[slot] = ini_read_string("Keyboard Controls", "move_right", move_right_default_keyboard);
-		move_up[slot] = ini_read_string("Keyboard Controls", "move_up", move_up_default_keyboard);
-		move_down[slot] = ini_read_string("Keyboard Controls", "move_down", move_down_default_keyboard);
-		fire[slot] = ini_read_string("Keyboard Controls", "fire", fire_default_keyboard);
-		secondary_fire[slot] = ini_read_string("Keyboard Controls", "secondary_fire", secondary_fire_default_keyboard);
-		reload[slot] = ini_read_string("Keyboard Controls", "reload", reload_default_keyboard);
-		switch_weapons[slot] = ini_read_string("Keyboard Controls", "switch_weapons", switch_weapons_default_keyboard);
-		character_action[slot] = ini_read_string("Keyboard Controls", "character_action", character_action_default_keyboard);
-		select[slot] = ini_read_string("Keyboard Controls", "select", select_default_keyboard);
-		back[slot] = ini_read_string("Keyboard Controls", "back", back_default_keyboard);
+		move_left_binding[slot] = ini_read_string("Keyboard Controls", "move_left", move_left_default_keyboard);
+		move_right_binding[slot] = ini_read_string("Keyboard Controls", "move_right", move_right_default_keyboard);
+		move_up_binding[slot] = ini_read_string("Keyboard Controls", "move_up", move_up_default_keyboard);
+		move_down_binding[slot] = ini_read_string("Keyboard Controls", "move_down", move_down_default_keyboard);
+		fire_binding[slot] = ini_read_string("Keyboard Controls", "fire", fire_default_keyboard);
+		secondary_fire_binding[slot] = ini_read_string("Keyboard Controls", "secondary_fire", secondary_fire_default_keyboard);
+		reload_binding[slot] = ini_read_string("Keyboard Controls", "reload", reload_default_keyboard);
+		switch_weapons_binding[slot] = ini_read_string("Keyboard Controls", "switch_weapons", switch_weapons_default_keyboard);
+		character_action_binding[slot] = ini_read_string("Keyboard Controls", "character_action", character_action_default_keyboard);
+		select_binding[slot] = ini_read_string("Keyboard Controls", "select", select_default_keyboard);
+		back_binding[slot] = ini_read_string("Keyboard Controls", "back", back_default_keyboard);
 	}
 	
 	//Load Controller Bindings (Slot 1-4)
 	else {
-		move_left[slot] = ini_read_string("Player " + string(slot) + " Controls", "move_left", move_left_default_controller);
-		move_right[slot] = ini_read_string("Player " + string(slot) + " Controls", "move_right", move_right_default_controller);
-		move_up[slot] = ini_read_string("Player " + string(slot) + " Controls", "move_up", move_up_default_controller);
-		move_down[slot] = ini_read_string("Player " + string(slot) + " Controls", "move_down", move_down_default_controller);
-		fire[slot] = ini_read_string("Player " + string(slot) + " Controls", "fire", fire_default_controller);
-		secondary_fire[slot] = ini_read_string("Player " + string(slot) + " Controls", "secondary_fire", secondary_fire_default_controller);
-		reload[slot] = ini_read_string("Player " + string(slot) + " Controls", "reload", reload_default_controller);
-		switch_weapons[slot] = ini_read_string("Player " + string(slot) + " Controls", "switch_weapons", switch_weapons_default_controller);
-		character_action[slot] = ini_read_string("Player " + string(slot) + " Controls", "character_action", character_action_default_controller);
-		select[slot] = ini_read_string("Player " + string(slot) + " Controls", "select", select_default_controller);
-		back[slot] = ini_read_string("Player " + string(slot) + " Controls", "back", back_default_controller);
+		move_left_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "move_left", move_left_default_controller);
+		move_right_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "move_right", move_right_default_controller);
+		move_up_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "move_up", move_up_default_controller);
+		move_down_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "move_down", move_down_default_controller);
+		fire_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "fire", fire_default_controller);
+		secondary_fire_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "secondary_fire", secondary_fire_default_controller);
+		reload_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "reload", reload_default_controller);
+		switch_weapons_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "switch_weapons", switch_weapons_default_controller);
+		character_action_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "character_action", character_action_default_controller);
+		select_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "select", select_default_controller);
+		back_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "back", back_default_controller);
 	}
 	
 }
@@ -413,24 +404,36 @@ controller_slot_max = 3;
 
 
 //Initialize Input Variables
-for(var i = 1; i <= o_GameController.max_number_of_players; i++){
+for(var i = 1; i <= max_number_of_players; i++){
 
-	move_horizontal[i] = 0;//Used to check the horizontal input of the left stick.
-	move_vertical[i] = 0; //Used to check the vertical input of the left stick
-	move_horizontal_pressed[i] = 0; //Used to check if the right stick horizontal input was just changed from the neutral position..
-	move_vertical_pressed[i] = 0; //Used to check if the right stick vertical input was just changed from the neutral position.
-	right_stick_horizontal[i] = 0; //Used to check the horizontal input of the right stick.
-	right_stick_vertical[i] = 0; //Used to check the vertical input of the right stick
-	fire[i] = 0; //Used to see if the fire button is being held down.
-	secondary_fire[i] = 0; //Used to see if the secondary fire button is being held down.
-	fire_pressed[i] = 0; //Used to see if the fire button was pressed this frame.
-	secondary_fire_pressed[i] = 0; //Used to see if the secondary fire button was pressed this frame.
-	reload[i] = 0; //Used to trigger a reload.
-	switch_weapons[i] = 0; //Used to switch between primary and secondary weapon.
-	character_action[i] = 0; //Used for rolling or other character actions.
-	select[i] = 0; //The select key.
-	previous_frame_horizontal_input[i] = 0; //Used for determining if the stick was just moved into the non-neutral position.
-	previous_frame_vertical_input[i] = 0; //Used for determining if the stick was just moved into the non-neutral position.
+	move_left[i] = 0;
+	move_right[i] = 0;
+	move_up[i] = 0;
+	move_down[i] = 0;
+	move_left_pressed[i] = 0;
+	move_right_pressed[i] = 0;
+	move_up_pressed[i] = 0;
+	move_down_pressed[i] = 0;
+	move_horizontal[i] = 0;
+	move_vertical[i] = 0;
+	move_horizontal_pressed[i] = 0;
+	move_vertical_pressed[i] = 0;
+	right_stick_horizontal[i] = 0;
+	right_stick_vertical[i] = 0;
+	fire[i] = 0;
+	secondary_fire[i] = 0;
+	fire_pressed[i] = 0;
+	secondary_fire_pressed[i] = 0;
+	reload[i] = 0;
+	reload_pressed[i] = 0;
+	switch_weapons[i] = 0;
+	switch_weapons_pressed[i] = 0;
+	character_action[i] = 0;
+	character_action_pressed[i] = 0;
+	select[i] = 0;
+	select_pressed[i] = 0;
+	move_horizontal_previous_frame[i] = 0;
+	move_vertical_previous_frame[i] = 0;
 	
 }
 

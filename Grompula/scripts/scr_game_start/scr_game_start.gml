@@ -7,11 +7,13 @@ function scr_game_start(){
 	
 	//Misc Macros
 	#macro largest_possible_value 9223372036854775807
+	#macro max_number_of_players 4
 	
 	//Input Macros
 	#macro input_type_keyboard 1
 	#macro input_type_mouse 2
 	#macro input_type_controller 3
+	#macro input_type_scroll 4
 	
 	//Player Colors
 	#macro player_color_1 make_color_rgb(0, 174, 240)
