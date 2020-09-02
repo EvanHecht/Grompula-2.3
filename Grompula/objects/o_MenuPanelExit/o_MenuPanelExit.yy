@@ -30,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Menu Objects",
-    "path": "folders/Objects/Menu Objects.yy",
+    "name": "Main Menu",
+    "path": "folders/Objects/Menu Objects/Main Menu.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_MenuPanelExit",

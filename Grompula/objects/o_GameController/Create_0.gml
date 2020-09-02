@@ -12,7 +12,7 @@ display_set_gui_size(display_get_width(), display_get_height());
 randomize();
 
 //Number of Players
-current_number_of_players = 1;
+current_number_of_players = 3;
 
 //Player colors
 player_color[1] = c_aqua;

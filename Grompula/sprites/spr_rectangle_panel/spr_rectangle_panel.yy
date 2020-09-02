@@ -72,8 +72,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f8584840-b4a1-4d80-9096-20fe6f1e9ee5","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Menu Sprites",
-    "path": "folders/Sprites/Menu Sprites.yy",
+    "name": "Main Menu",
+    "path": "folders/Sprites/Menu Sprites/Main Menu.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_rectangle_panel",
