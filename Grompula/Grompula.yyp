@@ -188,6 +188,7 @@
     {"id":{"name":"fnt_upgrade_description","path":"fonts/fnt_upgrade_description/fnt_upgrade_description.yy",},"order":1,},
     {"id":{"name":"spr_options_bar","path":"sprites/spr_options_bar/spr_options_bar.yy",},"order":1,},
     {"id":{"name":"fnt_upgrade_banner","path":"fonts/fnt_upgrade_banner/fnt_upgrade_banner.yy",},"order":2,},
+    {"id":{"name":"spr_house2","path":"sprites/spr_house2/spr_house2.yy",},"order":7,},
     {"id":{"name":"fnt_panel_title","path":"fonts/fnt_panel_title/fnt_panel_title.yy",},"order":0,},
     {"id":{"name":"fnt_panel_description","path":"fonts/fnt_panel_description/fnt_panel_description.yy",},"order":1,},
     {"id":{"name":"spr_EnemyBlood","path":"sprites/spr_EnemyBlood/spr_EnemyBlood.yy",},"order":4,},
