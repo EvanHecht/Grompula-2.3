@@ -13,6 +13,7 @@ falling_grompuloid = function() constructor {
 	sprite_speed = .25;
 	xscale = 1 * attribute_multiplier;
 	yscale = 1 * attribute_multiplier;
+	
 }
 
 //This list holds of the structs for the falling grompuloids
