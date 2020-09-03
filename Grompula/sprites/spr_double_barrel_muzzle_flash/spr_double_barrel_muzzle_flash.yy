@@ -101,7 +101,7 @@
   ],
   "parent": {
     "name": "Double Barrel",
-    "path": "folders/Sprites/Weapon Sprites/Double Barrel.yy",
+    "path": "folders/Weapons/Double Barrel.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_double_barrel_muzzle_flash",

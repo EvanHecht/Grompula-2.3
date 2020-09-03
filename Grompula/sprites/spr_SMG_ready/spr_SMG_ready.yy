@@ -121,7 +121,7 @@
   ],
   "parent": {
     "name": "SMG",
-    "path": "folders/Sprites/Weapon Sprites/SMG.yy",
+    "path": "folders/Weapons/SMG.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_SMG_ready",

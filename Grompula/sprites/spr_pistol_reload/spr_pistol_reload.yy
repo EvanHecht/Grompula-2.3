@@ -181,7 +181,7 @@
   ],
   "parent": {
     "name": "Pistol",
-    "path": "folders/Sprites/Weapon Sprites/Pistol.yy",
+    "path": "folders/Weapons/Pistol.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_pistol_reload",

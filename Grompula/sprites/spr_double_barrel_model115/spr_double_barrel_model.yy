@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_double_barrel_model","path":"sprites/spr_double_barrel_model/spr_double_barrel_model.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_double_barrel_model",
+    "name": "",
     "tags": [],
     "resourceType": "GMSequence",
   },
