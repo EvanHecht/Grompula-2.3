@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_SMG_bullet","path":"sprites/spr_SMG_bullet/spr_SMG_bullet.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_SMG_bullet",
     "tags": [],
     "resourceType": "GMSequence",
   },

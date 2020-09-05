@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_SMG_bullet_casing","path":"sprites/spr_SMG_bullet_casing/spr_SMG_bullet_casing.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_SMG_bullet_casing",
     "tags": [],
     "resourceType": "GMSequence",
   },

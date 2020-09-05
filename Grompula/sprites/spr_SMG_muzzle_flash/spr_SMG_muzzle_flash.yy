@@ -92,7 +92,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_SMG_muzzle_flash","path":"sprites/spr_SMG_muzzle_flash/spr_SMG_muzzle_flash.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_SMG_muzzle_flash",
     "tags": [],
     "resourceType": "GMSequence",
   },

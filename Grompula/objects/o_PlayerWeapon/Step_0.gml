@@ -4,16 +4,17 @@
 image_angle = angle_approach(image_angle, creator.aim_angle, creator.aiming_speed);
 var angle_diff = abs(angle_difference(image_angle, 0));
 
+//Scale to weapon scale stat
+image_xscale = get_weapon_stat(weapon_slot[current_weapon_slot], weapon_xscale);
+image_yscale = get_weapon_stat(weapon_slot[current_weapon_slot], weapon_yscale);
+
+//Flip gun if needed
 if(angle_diff < 90) image_yscale = abs(image_yscale);
 else if(angle_diff > 90) image_yscale = -abs(image_yscale);
-
-
 
 //Keep gun on center of player.
 x = creator.center_x + lengthdir_x(get_weapon_stat(weapon_slot[current_weapon_slot], body_distance), image_angle);
 y = creator.center_y + lengthdir_y(get_weapon_stat(weapon_slot[current_weapon_slot], body_distance), image_angle);
-
-
 
 #endregion
 

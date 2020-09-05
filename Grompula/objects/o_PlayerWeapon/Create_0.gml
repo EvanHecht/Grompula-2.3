@@ -6,7 +6,7 @@ last_fire_type = primary;
 depth = creator.depth - 1;
 
 //weapon slots
-weapon_slot[1] = pistol;
+weapon_slot[1] = burst_rifle;
 weapon_slot[2] = SMG;
 current_weapon_slot = 1;
 
@@ -18,5 +18,13 @@ ammo_current[2] = ammo_max[2];
 reloading[1] = false;
 reloading[2] = false;
 
-//Weapon Specific Variables
+#region -----[Weapon Specific Variables]-----
+
+//Double Barrel
 double_barrel_shells_ejected = false;
+
+//Burst Rifle
+burst_rifle_bullet_fired = [false, false, false];
+
+
+#endregion

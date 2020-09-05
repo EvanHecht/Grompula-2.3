@@ -11,10 +11,13 @@ global.weapon_list = ds_list_create();
 #macro full_auto 4
 
 #region Weapon ID Macros
+
 #macro no_weapon 0
 #macro pistol 1
 #macro SMG 2
 #macro double_barrel 3
+#macro burst_rifle 4
+
 #endregion
 
 #region Weapon Stat Macros
@@ -29,25 +32,26 @@ global.weapon_list = ds_list_create();
 #macro muzzle_distance_offset 6 
 #macro casing_angle_offset 7
 #macro casing_distance_offset 8
-
+#macro weapon_xscale 9
+#macro weapon_yscale 10
 
 //Primary
-#macro primary_fire_rate 9
-#macro primary_shot_speed 10
-#macro primary_accuracy 11
-#macro primary_damage 12
-#macro primary_range 13
-#macro primary_penetration 14
-#macro primary_firing_mode 15
+#macro primary_fire_rate 11
+#macro primary_shot_speed 12
+#macro primary_accuracy 13
+#macro primary_damage 14
+#macro primary_range 15
+#macro primary_penetration 16
+#macro primary_firing_mode 17
 
 //Secondary
-#macro secondary_fire_rate 16
-#macro secondary_shot_speed 17
-#macro secondary_accuracy 18
-#macro secondary_damage 19
-#macro secondary_range 20
-#macro secondary_penetration 21
-#macro secondary_firing_mode 22
+#macro secondary_fire_rate 18
+#macro secondary_shot_speed 19
+#macro secondary_accuracy 20
+#macro secondary_damage 21
+#macro secondary_range 22
+#macro secondary_penetration 23
+#macro secondary_firing_mode 24
 
 #endregion
 
@@ -85,7 +89,7 @@ global.weapon_list = ds_list_create();
 pistol_stats = ds_map_create();
 
 //Generic Stats
-ds_map_add(pistol_stats, weapon_name, "pistol");
+ds_map_add(pistol_stats, weapon_name, "Pistol");
 ds_map_add(pistol_stats, reload_speed, 100);
 ds_map_add(pistol_stats, ready_speed, 60);
 ds_map_add(pistol_stats, ammo_capacity, 12);
@@ -94,7 +98,8 @@ ds_map_add(pistol_stats, muzzle_angle_offset, 13);
 ds_map_add(pistol_stats, muzzle_distance_offset, 60);
 ds_map_add(pistol_stats, casing_angle_offset, 52);
 ds_map_add(pistol_stats, casing_distance_offset, 18);
-
+ds_map_add(pistol_stats, weapon_xscale, 1);
+ds_map_add(pistol_stats, weapon_yscale, 1);
 
 //Primary Stats
 ds_map_add(pistol_stats, primary_fire_rate, 15);
@@ -133,10 +138,10 @@ ds_map_add(pistol_scripts, weapon_script_primary_fire, primary_fire_pistol);
 ds_map_add(pistol_scripts, weapon_script_secondary_fire, secondary_fire_pistol);
 ds_map_add(pistol_scripts, weapon_script_primary_bullet, primary_bullet_pistol);
 ds_map_add(pistol_scripts, weapon_script_secondary_bullet, secondary_bullet_pistol);
-ds_map_add(pistol_scripts, weapon_script_primary_firing, -1);
-ds_map_add(pistol_scripts, weapon_script_secondary_firing, -1);
-ds_map_add(pistol_scripts, weapon_script_reload, -1);
-ds_map_add(pistol_scripts, weapon_script_constant_behavior, -1);
+ds_map_add(pistol_scripts, weapon_script_primary_firing, primary_firing_pistol);
+ds_map_add(pistol_scripts, weapon_script_secondary_firing, secondary_firing_pistol);
+ds_map_add(pistol_scripts, weapon_script_reload, reload_pistol());
+ds_map_add(pistol_scripts, weapon_script_constant_behavior, constant_behavior_pistol());
 
 //Add this weapon to the databases
 ds_map_add(global.weapon_database, pistol, pistol_stats); 
@@ -161,7 +166,8 @@ ds_map_add(SMG_stats, muzzle_angle_offset, 14);
 ds_map_add(SMG_stats, muzzle_distance_offset, 76);
 ds_map_add(SMG_stats, casing_angle_offset, 90);
 ds_map_add(SMG_stats, casing_distance_offset, 23);
-
+ds_map_add(SMG_stats, weapon_xscale, 1);
+ds_map_add(SMG_stats, weapon_yscale, 1);
 
 //Primary Stats
 ds_map_add(SMG_stats, primary_fire_rate, 11);
@@ -200,10 +206,10 @@ ds_map_add(SMG_scripts, weapon_script_primary_fire, primary_fire_SMG);
 ds_map_add(SMG_scripts, weapon_script_secondary_fire, secondary_fire_SMG);
 ds_map_add(SMG_scripts, weapon_script_primary_bullet, primary_bullet_SMG);
 ds_map_add(SMG_scripts, weapon_script_secondary_bullet, secondary_bullet_SMG);
-ds_map_add(SMG_scripts, weapon_script_primary_firing, -1);
-ds_map_add(SMG_scripts, weapon_script_secondary_firing, -1);
-ds_map_add(SMG_scripts, weapon_script_reload, -1);
-ds_map_add(SMG_scripts, weapon_script_constant_behavior, -1);
+ds_map_add(SMG_scripts, weapon_script_primary_firing, primary_firing_SMG);
+ds_map_add(SMG_scripts, weapon_script_secondary_firing, secondary_firing_SMG);
+ds_map_add(SMG_scripts, weapon_script_reload, reload_SMG());
+ds_map_add(SMG_scripts, weapon_script_constant_behavior, constant_behavior_SMG());
 
 //Add this weapon to the databases
 ds_map_add(global.weapon_database, SMG, SMG_stats); 
@@ -219,7 +225,7 @@ ds_list_add(global.weapon_list, SMG);
 double_barrel_stats = ds_map_create();
 
 //Generic Stats
-ds_map_add(double_barrel_stats, weapon_name, "double barrel");
+ds_map_add(double_barrel_stats, weapon_name, "Double Barrel");
 ds_map_add(double_barrel_stats, reload_speed, 100);
 ds_map_add(double_barrel_stats, ready_speed, 50);
 ds_map_add(double_barrel_stats, ammo_capacity, 2);
@@ -228,6 +234,9 @@ ds_map_add(double_barrel_stats, muzzle_angle_offset, 3.2);
 ds_map_add(double_barrel_stats, muzzle_distance_offset, 124);
 ds_map_add(double_barrel_stats, casing_angle_offset, 31);
 ds_map_add(double_barrel_stats, casing_distance_offset, 17);
+ds_map_add(double_barrel_stats, weapon_xscale, 1);
+ds_map_add(double_barrel_stats, weapon_yscale, 1);
+
 
 
 //Primary Stats
@@ -268,16 +277,86 @@ ds_map_add(double_barrel_scripts, weapon_script_primary_fire, primary_fire_doubl
 ds_map_add(double_barrel_scripts, weapon_script_secondary_fire, secondary_fire_double_barrel);
 ds_map_add(double_barrel_scripts, weapon_script_primary_bullet, primary_bullet_double_barrel);
 ds_map_add(double_barrel_scripts, weapon_script_secondary_bullet, secondary_bullet_double_barrel);
-ds_map_add(double_barrel_scripts, weapon_script_primary_firing, -1);
-ds_map_add(double_barrel_scripts, weapon_script_secondary_firing, -1);
-ds_map_add(double_barrel_scripts, weapon_script_reload, reload_double_barrel);
-ds_map_add(double_barrel_scripts, weapon_script_constant_behavior, -1);
+ds_map_add(double_barrel_scripts, weapon_script_primary_firing, primary_firing_double_barrel);
+ds_map_add(double_barrel_scripts, weapon_script_secondary_firing, secondary_firing_double_barrel);
+ds_map_add(double_barrel_scripts, weapon_script_reload, reload_double_barrel());
+ds_map_add(double_barrel_scripts, weapon_script_constant_behavior, constant_behavior_double_barrel());
 
 //Add this weapon to the databases
 ds_map_add(global.weapon_database, double_barrel, double_barrel_stats); 
 ds_map_add(global.weapon_spritebase, double_barrel, double_barrel_sprites);
 ds_map_add(global.weapon_scriptbase, double_barrel, double_barrel_scripts);
 ds_list_add(global.weapon_list, double_barrel);
+
+#endregion
+
+#region <Burst Rifle>
+
+//[STATS]
+burst_rifle_stats = ds_map_create();
+
+//Generic Stats
+ds_map_add(burst_rifle_stats, weapon_name, "Burst Rifle");
+ds_map_add(burst_rifle_stats, reload_speed, 120);
+ds_map_add(burst_rifle_stats, ready_speed, 60);
+ds_map_add(burst_rifle_stats, ammo_capacity, 30);
+ds_map_add(burst_rifle_stats, body_distance, 35);
+ds_map_add(burst_rifle_stats, muzzle_angle_offset, 14);
+ds_map_add(burst_rifle_stats, muzzle_distance_offset, 76);
+ds_map_add(burst_rifle_stats, casing_angle_offset, 90);
+ds_map_add(burst_rifle_stats, casing_distance_offset, 23);
+ds_map_add(burst_rifle_stats, weapon_xscale, .7);
+ds_map_add(burst_rifle_stats, weapon_yscale, .7);
+
+
+//Primary Stats
+ds_map_add(burst_rifle_stats, primary_fire_rate, 35);
+ds_map_add(burst_rifle_stats, primary_shot_speed, 5);
+ds_map_add(burst_rifle_stats, primary_accuracy, 1);
+ds_map_add(burst_rifle_stats, primary_damage, .75);
+ds_map_add(burst_rifle_stats, primary_range, 1000);
+ds_map_add(burst_rifle_stats, primary_penetration, 1);
+ds_map_add(burst_rifle_stats, primary_firing_mode, semi_auto);
+
+//Secondary Stats
+ds_map_add(burst_rifle_stats, secondary_fire_rate, 7);
+ds_map_add(burst_rifle_stats, secondary_shot_speed, 40);
+ds_map_add(burst_rifle_stats, secondary_accuracy, 25);
+ds_map_add(burst_rifle_stats, secondary_damage, .75);
+ds_map_add(burst_rifle_stats, secondary_range, 400);
+ds_map_add(burst_rifle_stats, secondary_penetration, 1);
+ds_map_add(burst_rifle_stats, secondary_firing_mode, full_auto);
+
+
+//[SPRITES]
+burst_rifle_sprites = ds_map_create();
+ds_map_add(burst_rifle_sprites, weapon_sprite_model, spr_burst_rifle_model);
+ds_map_add(burst_rifle_sprites, weapon_sprite_idle, spr_burst_rifle_idle);
+ds_map_add(burst_rifle_sprites, weapon_sprite_primary_fire, spr_burst_rifle_fire);
+ds_map_add(burst_rifle_sprites, weapon_sprite_secondary_fire, spr_burst_rifle_fire);
+ds_map_add(burst_rifle_sprites, weapon_sprite_ready, spr_burst_rifle_ready);
+ds_map_add(burst_rifle_sprites, weapon_sprite_reload, spr_burst_rifle_reload);
+ds_map_add(burst_rifle_sprites, weapon_sprite_primary_bullet, spr_burst_rifle_bullet);
+ds_map_add(burst_rifle_sprites, weapon_sprite_secondary_bullet, spr_burst_rifle_bullet);
+ds_map_add(burst_rifle_sprites, weapon_sprite_muzzle_flash, spr_burst_rifle_muzzle_flash);
+ds_map_add(burst_rifle_sprites, weapon_sprite_bullet_casing, spr_burst_rifle_bullet_casing);
+
+//[SCRIPTS]
+burst_rifle_scripts = ds_map_create();
+ds_map_add(burst_rifle_scripts, weapon_script_primary_fire, primary_fire_burst_rifle);
+ds_map_add(burst_rifle_scripts, weapon_script_secondary_fire, secondary_fire_burst_rifle);
+ds_map_add(burst_rifle_scripts, weapon_script_primary_bullet, primary_bullet_burst_rifle);
+ds_map_add(burst_rifle_scripts, weapon_script_secondary_bullet, secondary_bullet_burst_rifle);
+ds_map_add(burst_rifle_scripts, weapon_script_primary_firing, primary_firing_burst_rifle);
+ds_map_add(burst_rifle_scripts, weapon_script_secondary_firing, secondary_firing_burst_rifle);
+ds_map_add(burst_rifle_scripts, weapon_script_reload, reload_burst_rifle());
+ds_map_add(burst_rifle_scripts, weapon_script_constant_behavior, constant_behavior_burst_rifle());
+
+//Add this weapon to the databases
+ds_map_add(global.weapon_database, burst_rifle, burst_rifle_stats); 
+ds_map_add(global.weapon_spritebase, burst_rifle, burst_rifle_sprites);
+ds_map_add(global.weapon_scriptbase, burst_rifle, burst_rifle_scripts);
+ds_list_add(global.weapon_list, burst_rifle);
 
 #endregion
 
