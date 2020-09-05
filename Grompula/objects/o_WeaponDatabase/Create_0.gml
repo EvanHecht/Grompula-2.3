@@ -301,19 +301,19 @@ ds_map_add(burst_rifle_stats, reload_speed, 120);
 ds_map_add(burst_rifle_stats, ready_speed, 60);
 ds_map_add(burst_rifle_stats, ammo_capacity, 30);
 ds_map_add(burst_rifle_stats, body_distance, 35);
-ds_map_add(burst_rifle_stats, muzzle_angle_offset, 14);
-ds_map_add(burst_rifle_stats, muzzle_distance_offset, 76);
-ds_map_add(burst_rifle_stats, casing_angle_offset, 90);
-ds_map_add(burst_rifle_stats, casing_distance_offset, 23);
-ds_map_add(burst_rifle_stats, weapon_xscale, .7);
-ds_map_add(burst_rifle_stats, weapon_yscale, .7);
+ds_map_add(burst_rifle_stats, muzzle_angle_offset, 10.008);
+ds_map_add(burst_rifle_stats, muzzle_distance_offset, 86.5);
+ds_map_add(burst_rifle_stats, casing_angle_offset, 49);
+ds_map_add(burst_rifle_stats, casing_distance_offset, 20);
+ds_map_add(burst_rifle_stats, weapon_xscale, .75);
+ds_map_add(burst_rifle_stats, weapon_yscale, .75);
 
 
 //Primary Stats
 ds_map_add(burst_rifle_stats, primary_fire_rate, 35);
-ds_map_add(burst_rifle_stats, primary_shot_speed, 5);
+ds_map_add(burst_rifle_stats, primary_shot_speed, 25);
 ds_map_add(burst_rifle_stats, primary_accuracy, 1);
-ds_map_add(burst_rifle_stats, primary_damage, .75);
+ds_map_add(burst_rifle_stats, primary_damage, 1.25);
 ds_map_add(burst_rifle_stats, primary_range, 1000);
 ds_map_add(burst_rifle_stats, primary_penetration, 1);
 ds_map_add(burst_rifle_stats, primary_firing_mode, semi_auto);

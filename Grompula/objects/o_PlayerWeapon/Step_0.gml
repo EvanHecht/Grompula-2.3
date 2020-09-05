@@ -18,6 +18,11 @@ y = creator.center_y + lengthdir_y(get_weapon_stat(weapon_slot[current_weapon_sl
 
 #endregion
 
+//Update the muzzle and casing ejector locations
+muzzle_x = x + lengthdir_x(get_weapon_stat(weapon_slot[current_weapon_slot], muzzle_distance_offset) * image_xscale, image_angle + (sign(image_yscale) * get_weapon_stat(weapon_slot[current_weapon_slot], muzzle_angle_offset)));
+muzzle_y = y + lengthdir_y(get_weapon_stat(weapon_slot[current_weapon_slot], muzzle_distance_offset) * abs(image_yscale), image_angle + (sign(image_yscale) * get_weapon_stat(weapon_slot[current_weapon_slot], muzzle_angle_offset)));
+casing_ejector_x = 0;
+casing_ejector_y = 0;
 
 
 switch(weapon_state){
@@ -91,7 +96,7 @@ switch(weapon_state){
 		}
 		
 		//Switch Weapon
-		if(o_InputController.switch_weapons[creator.player]){
+		if(o_InputController.switch_weapons_pressed[creator.player]){
 			if(current_weapon_slot == 1) current_weapon_slot = 2;
 			else current_weapon_slot = 1;
 			weapon_state = "entry";
@@ -208,7 +213,9 @@ depth = creator.depth - 1;
 
 
 
-
-
-
+//Epic Hotkeys
+if(read_input("1", true, -1)) set_weapon(creator, pistol, "current");
+if(read_input("2", true, -1)) set_weapon(creator, SMG, "current");
+if(read_input("3", true, -1)) set_weapon(creator, double_barrel, "current");
+if(read_input("4", true, -1)) set_weapon(creator, burst_rifle, "current");
 

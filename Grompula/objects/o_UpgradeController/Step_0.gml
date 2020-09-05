@@ -5,7 +5,7 @@ switch(state){
 	
 	#region "inactve" state
 	case "inactive":
-	
+	if(read_input("l", true, -1)) state = "active";
 	break;
 	#endregion
 	
@@ -81,5 +81,6 @@ switch(state){
 	#endregion
 	
 }
+
 
 

@@ -1,5 +1,7 @@
 var targets = instance_nearest_list(x, y, o_Tombstone);
 
+depth = -y;
+
 if (target_tombstone == -1) {
 	var shortest_distance = -1;
 	var determined_target = -1;

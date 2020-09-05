@@ -5,8 +5,13 @@ image_speed = 0;
 last_fire_type = primary;
 depth = creator.depth - 1;
 
+muzzle_x = 0;
+muzzle_y = 0;
+casing_ejector_x = 0;
+casing_ejector_y = 0;
+
 //weapon slots
-weapon_slot[1] = burst_rifle;
+weapon_slot[1] = pistol;
 weapon_slot[2] = SMG;
 current_weapon_slot = 1;
 

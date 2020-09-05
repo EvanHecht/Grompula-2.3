@@ -4,7 +4,7 @@ player_1_use_keyboard = true;
 state = "input processing";
 
 //debugging
-debug = true;
+debug = false;
 last_key_pressed = "";
 
 #region Assign Controllers To Slots & Gather Information About Them
