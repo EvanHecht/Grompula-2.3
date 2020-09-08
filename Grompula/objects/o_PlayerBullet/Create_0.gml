@@ -21,7 +21,7 @@ if(fire_type == primary){
 	
 	bullet_range = get_weapon_stat(weapon_type, primary_range);
 	bullet_speed = get_weapon_stat(weapon_type, primary_shot_speed);
-	bullet_accuracy = get_weapon_stat(weapon_type, primary_accuracy);
+	bullet_accuracy = get_weapon_stat(weapon_type, primary_spread);
 	bullet_damage = get_weapon_stat(weapon_type, primary_damage);
 	bullet_range = get_weapon_stat(weapon_type, primary_range);
 	bullet_penetration = get_weapon_stat(weapon_type, primary_penetration);
@@ -32,21 +32,25 @@ else {
 	
 	bullet_range = get_weapon_stat(weapon_type, secondary_range);
 	bullet_speed = get_weapon_stat(weapon_type, secondary_shot_speed);
-	bullet_accuracy = get_weapon_stat(weapon_type, secondary_accuracy);
+	bullet_accuracy = get_weapon_stat(weapon_type, secondary_spread);
 	bullet_damage = get_weapon_stat(weapon_type, secondary_damage);
 	bullet_range = get_weapon_stat(weapon_type, secondary_range);
 	bullet_penetration = get_weapon_stat(weapon_type, secondary_penetration);
 	
 }
 
+//Apply Stats
+bullet_accuracy = bullet_accuracy - (bullet_accuracy * creator.creator.accuracy);
+bullet_damage = bullet_damage * creator.creator.damage;
+
 
 //Set initial variables
 initial_bullet_range = bullet_range;
 initial_bullet_speed = bullet_speed;
 initial_bullet_accuracy = bullet_accuracy;
-initial_bullet_damage = bullet_damage;
+initial_bullet_damage = bullet_damage * creator.creator.damage;
 initial_bullet_range = bullet_range;
-initial_bullet_penetration = bullet_penetration;;
+initial_bullet_penetration = bullet_penetration;
 
 #endregion
 

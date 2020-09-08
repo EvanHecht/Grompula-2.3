@@ -38,7 +38,7 @@ global.weapon_list = ds_list_create();
 //Primary
 #macro primary_fire_rate 11
 #macro primary_shot_speed 12
-#macro primary_accuracy 13
+#macro primary_spread 13
 #macro primary_damage 14
 #macro primary_range 15
 #macro primary_penetration 16
@@ -47,7 +47,7 @@ global.weapon_list = ds_list_create();
 //Secondary
 #macro secondary_fire_rate 18
 #macro secondary_shot_speed 19
-#macro secondary_accuracy 20
+#macro secondary_spread 20
 #macro secondary_damage 21
 #macro secondary_range 22
 #macro secondary_penetration 23
@@ -104,7 +104,7 @@ ds_map_add(pistol_stats, weapon_yscale, 1);
 //Primary Stats
 ds_map_add(pistol_stats, primary_fire_rate, 15);
 ds_map_add(pistol_stats, primary_shot_speed, 40);
-ds_map_add(pistol_stats, primary_accuracy, 7);
+ds_map_add(pistol_stats, primary_spread, 7);
 ds_map_add(pistol_stats, primary_damage, 1);
 ds_map_add(pistol_stats, primary_range, 1000);
 ds_map_add(pistol_stats, primary_penetration, 1);
@@ -113,7 +113,7 @@ ds_map_add(pistol_stats, primary_firing_mode, semi_auto);
 //Secondary Stats
 ds_map_add(pistol_stats, secondary_fire_rate, 40);
 ds_map_add(pistol_stats, secondary_shot_speed, 40);
-ds_map_add(pistol_stats, secondary_accuracy, 7);
+ds_map_add(pistol_stats, secondary_spread, 7);
 ds_map_add(pistol_stats, secondary_damage, 1);
 ds_map_add(pistol_stats, secondary_range, 700);
 ds_map_add(pistol_stats, secondary_penetration, 1);
@@ -160,7 +160,7 @@ SMG_stats = ds_map_create();
 ds_map_add(SMG_stats, weapon_name, "SMG");
 ds_map_add(SMG_stats, reload_speed, 100);
 ds_map_add(SMG_stats, ready_speed, 50);
-ds_map_add(SMG_stats, ammo_capacity, 30);
+ds_map_add(SMG_stats, ammo_capacity, 25);
 ds_map_add(SMG_stats, body_distance, 50);
 ds_map_add(SMG_stats, muzzle_angle_offset, 14);
 ds_map_add(SMG_stats, muzzle_distance_offset, 76);
@@ -170,20 +170,20 @@ ds_map_add(SMG_stats, weapon_xscale, 1);
 ds_map_add(SMG_stats, weapon_yscale, 1);
 
 //Primary Stats
-ds_map_add(SMG_stats, primary_fire_rate, 11);
+ds_map_add(SMG_stats, primary_fire_rate, 12);
 ds_map_add(SMG_stats, primary_shot_speed, 45);
-ds_map_add(SMG_stats, primary_accuracy, 7);
+ds_map_add(SMG_stats, primary_spread, 7);
 ds_map_add(SMG_stats, primary_damage, .75);
 ds_map_add(SMG_stats, primary_range, 1000);
 ds_map_add(SMG_stats, primary_penetration, 1);
 ds_map_add(SMG_stats, primary_firing_mode, full_auto);
 
 //Secondary Stats
-ds_map_add(SMG_stats, secondary_fire_rate, 7);
+ds_map_add(SMG_stats, secondary_fire_rate, 5);
 ds_map_add(SMG_stats, secondary_shot_speed, 40);
-ds_map_add(SMG_stats, secondary_accuracy, 25);
+ds_map_add(SMG_stats, secondary_spread, 40);
 ds_map_add(SMG_stats, secondary_damage, .75);
-ds_map_add(SMG_stats, secondary_range, 400);
+ds_map_add(SMG_stats, secondary_range, 350);
 ds_map_add(SMG_stats, secondary_penetration, 1);
 ds_map_add(SMG_stats, secondary_firing_mode, full_auto);
 
@@ -242,7 +242,7 @@ ds_map_add(double_barrel_stats, weapon_yscale, 1);
 //Primary Stats
 ds_map_add(double_barrel_stats, primary_fire_rate, 25);
 ds_map_add(double_barrel_stats, primary_shot_speed, 45);
-ds_map_add(double_barrel_stats, primary_accuracy, 12);
+ds_map_add(double_barrel_stats, primary_spread, 12);
 ds_map_add(double_barrel_stats, primary_damage, .75);
 ds_map_add(double_barrel_stats, primary_range, 400);
 ds_map_add(double_barrel_stats, primary_penetration, 1);
@@ -251,7 +251,7 @@ ds_map_add(double_barrel_stats, primary_firing_mode, semi_auto);
 //Secondary Stats
 ds_map_add(double_barrel_stats, secondary_fire_rate, 25);
 ds_map_add(double_barrel_stats, secondary_shot_speed, 45);
-ds_map_add(double_barrel_stats, secondary_accuracy, 24);
+ds_map_add(double_barrel_stats, secondary_spread, 24);
 ds_map_add(double_barrel_stats, secondary_damage, .75);
 ds_map_add(double_barrel_stats, secondary_range, 400);
 ds_map_add(double_barrel_stats, secondary_penetration, 1);
@@ -311,9 +311,9 @@ ds_map_add(burst_rifle_stats, weapon_yscale, .75);
 
 //Primary Stats
 ds_map_add(burst_rifle_stats, primary_fire_rate, 35);
-ds_map_add(burst_rifle_stats, primary_shot_speed, 25);
-ds_map_add(burst_rifle_stats, primary_accuracy, 1);
-ds_map_add(burst_rifle_stats, primary_damage, 1.25);
+ds_map_add(burst_rifle_stats, primary_shot_speed, 35);
+ds_map_add(burst_rifle_stats, primary_spread, 1);
+ds_map_add(burst_rifle_stats, primary_damage, 1.7);
 ds_map_add(burst_rifle_stats, primary_range, 1000);
 ds_map_add(burst_rifle_stats, primary_penetration, 1);
 ds_map_add(burst_rifle_stats, primary_firing_mode, semi_auto);
@@ -321,7 +321,7 @@ ds_map_add(burst_rifle_stats, primary_firing_mode, semi_auto);
 //Secondary Stats
 ds_map_add(burst_rifle_stats, secondary_fire_rate, 7);
 ds_map_add(burst_rifle_stats, secondary_shot_speed, 40);
-ds_map_add(burst_rifle_stats, secondary_accuracy, 25);
+ds_map_add(burst_rifle_stats, secondary_spread, 25);
 ds_map_add(burst_rifle_stats, secondary_damage, .75);
 ds_map_add(burst_rifle_stats, secondary_range, 400);
 ds_map_add(burst_rifle_stats, secondary_penetration, 1);

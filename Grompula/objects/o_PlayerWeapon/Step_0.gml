@@ -174,7 +174,7 @@ switch(weapon_state){
 		}
 		
 		//Switch Weapon
-		if(o_InputController.switch_weapons[creator.player]){
+		if(o_InputController.switch_weapons_pressed[creator.player]){
 			if(current_weapon_slot == 1) current_weapon_slot = 2;
 			else current_weapon_slot = 1;
 			weapon_state = "entry";
