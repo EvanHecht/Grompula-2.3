@@ -23,6 +23,14 @@ function scr_game_start(){
 	
 	#endregion
 	
+	#region Setup Global Variables
+	
+	//Initialize The Player Stat Data Structure
+	player_stat_setup();
+	
+	
+	#endregion
+	
 	#region Setup Game Config
 	
 	//Create Game Config File
@@ -53,7 +61,7 @@ function scr_game_start(){
 	
 	#endregion
 	
-	
+		
 
 	#region Create Initial Game Objects
 	

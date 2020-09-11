@@ -38,8 +38,8 @@ damage_min = .01;
 //Penetration
 stat_penetration = 0;
 penetration = 0;
-damage_max = 99999;
-damage_min = .01;
+penetration_max = 99999;
+penetration_min = .01;
 
 //Fire rate
 stat_fire_rate = 0;

@@ -50,6 +50,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"o_Spawner","path":"objects/o_Spawner/o_Spawner.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2688.0,"y":1984.0,"resourceVersion":"1.0","name":"inst_7A8094CA","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"o_Spawner","path":"objects/o_Spawner/o_Spawner.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2304.0,"y":1984.0,"resourceVersion":"1.0","name":"inst_71C2891A","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"o_Spawner","path":"objects/o_Spawner/o_Spawner.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1920.0,"y":1984.0,"resourceVersion":"1.0","name":"inst_3D9FDAB4","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"o_PlayerSpawner2","path":"objects/o_PlayerSpawner2/o_PlayerSpawner2.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1664.0,"y":1536.0,"resourceVersion":"1.0","name":"inst_76EB5E5C","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":64,"gridY":64,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Spawners","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"o_Pit","path":"objects/o_Pit/o_Pit.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":6.0,"scaleY":3.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1664.0,"y":1728.0,"resourceVersion":"1.0","name":"inst_5FE6B3C7","tags":[],"resourceType":"GMRInstance",},
@@ -173,6 +174,7 @@
     {"name":"inst_721FC981","path":"rooms/room_Island_Map/room_Island_Map.yy",},
     {"name":"inst_50CE2448","path":"rooms/room_Island_Map/room_Island_Map.yy",},
     {"name":"inst_218FCA1A","path":"rooms/room_Island_Map/room_Island_Map.yy",},
+    {"name":"inst_76EB5E5C","path":"rooms/room_Island_Map/room_Island_Map.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
