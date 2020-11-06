@@ -1,28 +1,5 @@
 #region Normalize Player Stats
 
-//Movement Speed
-movement_speed = stat_movement_speed - (stat_movement_speed * status_effect_slow_percentage); 
-movement_speed = clamp(movement_speed, movement_speed_min, movement_speed_max);
-
-//Reload Speed
-reloading_speed = stat_reloading_speed;
-
-//Rolling Speed
-rolling_speed = stat_rolling_speed - (stat_movement_speed * status_effect_slow_percentage);
-rolling_speed = clamp(rolling_speed, rolling_speed_min, rolling_speed_max);
-
-//Reloading Speed
-reloading_speed = stat_reloading_speed;
-reloading_speed = clamp(reloading_speed, reloading_speed_min, reloading_speed_max);
-
-//Aiming Speed
-aiming_speed = stat_aiming_speed;
-aiming_speed = clamp(aiming_speed, aiming_speed_min, aiming_speed_max);
-
-//Fire Rate
-fire_rate = stat_fire_rate;
-fire_rate = clamp(fire_rate, fire_rate_min, fire_rate_max);
-
 //Decrement environmental damage timer
 environmental_damage_timer--;
 
@@ -90,6 +67,7 @@ case "rolling":
 set_sprite(spr_player_rolling);
 image_speed = 1;
 
+
 //Make Player Roll
 if(animation_finished()){
 	state = "moving";	
@@ -118,6 +96,12 @@ if(iframes > 0){
 }
 iframes = approach(iframes, 0, 1);
 
+
+
+//Update Center Variables
+center_x = x;
+center_y = y - 45;
+
 //Assign Depth
 depth = -y;
 
@@ -126,5 +110,3 @@ depth = -y;
 if(hp <= 0){
 	game_end();	
 }
-
-

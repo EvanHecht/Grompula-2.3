@@ -31,6 +31,7 @@ function primary_firing_burst_rifle(){
 	//Fire the second bullet
 	if(!burst_rifle_bullet_fired[1] && image_index >= second_bullet_fire_frame && ammo_current[current_weapon_slot] > 0 ){
 		fire_bullet(primary);
+		instance_create_depth(x, y, depth - 1, o_MuzzleFlash);
 		ammo_current[current_weapon_slot]--;
 		burst_rifle_bullet_fired[1] = true;
 	}
@@ -38,6 +39,7 @@ function primary_firing_burst_rifle(){
 	//Fire the third bullet
 	if(!burst_rifle_bullet_fired[2] && image_index >= third_bullet_fire_frame && ammo_current[current_weapon_slot] > 0 ){
 		fire_bullet(primary);
+		instance_create_depth(x, y, depth - 1, o_MuzzleFlash);
 		ammo_current[current_weapon_slot]--;
 		burst_rifle_bullet_fired[2] = true;
 	}

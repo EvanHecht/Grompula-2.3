@@ -1,4 +1,13 @@
-draw_self()
+//Set Player Shader Color
+shader_set_safe(shdr_player);
+var myColor = o_GameController.player_color[player];
+var in_value = shader_get_uniform(shdr_player, "in_Colour");
+show_debug_message("RGB: " + string(color_get_red(myColor)) + " " + string(color_get_green(myColor)) + " " + string(color_get_blue(myColor)));
+shader_set_uniform_f(in_value, color_get_red(myColor), color_get_green(myColor), color_get_blue(myColor), 0.0);
+
+//show_debug_message(is_numeric(color_get_green(myColor)));
+draw_self();
+shader_reset();
 
 #region Debug Info
 
@@ -24,6 +33,8 @@ draw_text(x-55, y-155, "Current: " + get_weapon_stat(player_weapon.weapon_slot[p
 draw_text(x-55, y-135, "Ammo: " + string(player_weapon.ammo_current[player_weapon.current_weapon_slot]) + "/" + string(player_weapon.ammo_max[player_weapon.current_weapon_slot]));
 
 }
+
+
 #endregion
 
 

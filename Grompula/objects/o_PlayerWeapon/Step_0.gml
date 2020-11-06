@@ -1,7 +1,7 @@
 #region Weapon Rotation & Positoning
 
 //Set the correct image angle
-image_angle = angle_approach(image_angle, creator.aim_angle, creator.aiming_speed);
+image_angle = angle_approach(image_angle, creator.aim_angle, get_player_stat("aiming speed", creator.player));
 var angle_diff = abs(angle_difference(image_angle, 0));
 
 //Scale to weapon scale stat
@@ -124,8 +124,7 @@ switch(weapon_state){
 		else fire_rate_reference = get_weapon_stat(weapon_slot[current_weapon_slot], secondary_fire_rate);
 		
 		//Play animation
-		var animation_speed = sprite_get_number(sprite_index) / fire_rate_reference;
-		animation_speed += (animation_speed * creator.fire_rate);
+		var animation_speed = (sprite_get_number(sprite_index) / fire_rate_reference) * creator.fire_rate;
 		image_index = approach(image_index, sprite_get_number(sprite_index) - 1, animation_speed);
 		
 		
@@ -162,8 +161,7 @@ switch(weapon_state){
 		set_sprite(get_weapon_sprite(weapon_slot[current_weapon_slot], weapon_sprite_reload));
 		
 		//Play animation
-		var animation_speed = (sprite_get_number(sprite_index) / get_weapon_stat(weapon_slot[current_weapon_slot], reload_speed));
-		animation_speed += (animation_speed * creator.reloading_speed);
+		var animation_speed = (sprite_get_number(sprite_index) / get_weapon_stat(weapon_slot[current_weapon_slot], reload_speed)) * creator.reloading_speed;
 		image_index = approach(image_index, sprite_get_number(sprite_index) - 1, animation_speed);
 		
 		//On reload finished
@@ -195,7 +193,7 @@ switch(weapon_state){
 		image_alpha = 0;
 		if(creator.state != "rolling"){
 			image_alpha = 1;
-			weapon_state = "readying";
+			weapon_state = "idle";
 		}
 		
 	break;

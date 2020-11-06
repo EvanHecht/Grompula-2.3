@@ -25,7 +25,7 @@ function scr_damage_player(argument0, argument1, argument2, argument3) {
 	if(!player_invincible || (player_invincible && ignore_invincibility == true)) {
 		if(on_hit_function != -1) script_execute(on_hit_function)
 		player.hp -= dmg;
-		player.iframes = player.stat_iframes;
+		player.iframes = get_player_stat("iframes", player.player);
 		screen_shake_add_until_limit(screen_shake_amount, screen_shake_amount, screen_shake_amount, screen_shake_amount);
 	}
 

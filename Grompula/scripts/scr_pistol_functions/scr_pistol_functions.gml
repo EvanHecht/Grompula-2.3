@@ -7,6 +7,7 @@ function primary_fire_pistol() {
 
 	//Fire Bullet
 	fire_bullet(primary);
+	audio_play_sound(snd_pistol_fire, 1, false);
 
 	//Subtract Ammo
 	ammo_current[current_weapon_slot]--;

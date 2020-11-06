@@ -279,7 +279,7 @@ ds_map_add(double_barrel_scripts, weapon_script_primary_bullet, primary_bullet_d
 ds_map_add(double_barrel_scripts, weapon_script_secondary_bullet, secondary_bullet_double_barrel);
 ds_map_add(double_barrel_scripts, weapon_script_primary_firing, primary_firing_double_barrel);
 ds_map_add(double_barrel_scripts, weapon_script_secondary_firing, secondary_firing_double_barrel);
-ds_map_add(double_barrel_scripts, weapon_script_reload, reload_double_barrel());
+ds_map_add(double_barrel_scripts, weapon_script_reload, reload_double_barrel);
 ds_map_add(double_barrel_scripts, weapon_script_constant_behavior, constant_behavior_double_barrel());
 
 //Add this weapon to the databases

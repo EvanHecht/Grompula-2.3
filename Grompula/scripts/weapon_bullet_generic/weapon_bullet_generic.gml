@@ -1,4 +1,7 @@
 function weapon_bullet_generic() {
+	
+	if(!on_creation){
+	
 	//Determine next frame position
 	var destination_x = x + lengthdir_x(bullet_speed, angle);
 	var destination_y = y + lengthdir_y(bullet_speed, angle);
@@ -9,7 +12,7 @@ function weapon_bullet_generic() {
 	for(var i = 0; i < ds_list_size(frame_targets); i++){
 	
 		var target = ds_list_find_value(frame_targets, i);
-		if(ds_list_find_index(bullet_hit_list, target) == -1){
+		if(ds_list_find_index(bullet_hit_list, target) == -1 && instance_exists(target) && target.hp > 0){
 			inflict_damage(bullet_damage, target);
 			enemies_hit++;
 			if(enemies_hit >= bullet_penetration){
@@ -29,6 +32,6 @@ function weapon_bullet_generic() {
 	//Move
 	x = destination_x;
 	y = destination_y;
-
+	}
 
 }

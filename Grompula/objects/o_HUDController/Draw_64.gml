@@ -22,8 +22,8 @@ for(var i = 1; i <= o_GameController.current_number_of_players; i++){
 		draw_y = player_draw_y[i] + healthbar_container_y_offset;
 	
 		//Draw the healthbar
-		var actual_health_percentage = (current_player.hp/current_player.stat_hp);
-		var delayed_health_percentage = max((healthbar_delayed_value[i - 1]/current_player.stat_hp) - .01, 0);
+		var actual_health_percentage = (current_player.hp/get_player_stat("hp", current_player.player));
+		var delayed_health_percentage = max((healthbar_delayed_value[i - 1]/get_player_stat("hp", current_player.player)) - .01, 0);
 		draw_set_alpha(HUD_alpha);
 		draw_sprite_ext(spr_healthbar_container_background, 0, draw_x, draw_y, current_draw_direction, 1, 0, c_white, HUD_alpha);
 		draw_x = player_draw_x[i] + (healthbar_x_offset * current_draw_direction);

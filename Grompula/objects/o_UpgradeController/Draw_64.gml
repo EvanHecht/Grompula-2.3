@@ -9,7 +9,7 @@ if(state == "active"){
 
 	//Retrieve info from the player who is currently selecting
 	var current_player = scr_get_player(current_player_selecting);
-	var number_of_panels = current_player.stat_upgrade_panels;
+	var number_of_panels = current_player.upgrade_panels;
 		
 	
 	//Determine Drawing Coordinates

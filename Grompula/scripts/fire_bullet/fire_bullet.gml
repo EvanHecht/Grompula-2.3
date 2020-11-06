@@ -2,8 +2,6 @@
 ///@param fire_type
 function fire_bullet(argument0) {
 
-
-
 	//Create the bullet casing
 	create_bullet_casing();
 
@@ -15,7 +13,5 @@ function fire_bullet(argument0) {
 	var spawn_y = muzzle_y;
 
 	return instance_create_depth(spawn_x, spawn_y, depth, o_PlayerBullet); //<-- Create the bullet
-
-
 
 }

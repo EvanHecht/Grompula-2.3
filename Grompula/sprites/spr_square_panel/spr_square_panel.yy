@@ -72,8 +72,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"06633179-6f64-4696-8e21-e563b16118eb","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Main Menu",
-    "path": "folders/Sprites/Menu Sprites/Main Menu.yy",
+    "name": "Legacy",
+    "path": "folders/Sprites/Menu Sprites/Main Menu/Legacy.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_square_panel",

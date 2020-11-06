@@ -61,8 +61,6 @@ function scr_game_start(){
 	
 	#endregion
 	
-		
-
 	#region Create Initial Game Objects
 	
 	//Game Controller
@@ -77,8 +75,13 @@ function scr_game_start(){
 	//Enemy Databse
 	instance_create_depth(0, 0, 0, o_EnemyDatabase);
 	
+	//Transitioner
+	instance_create_depth(0, 0, 0, o_Transitioner);
+	
+	//Cursor
+	instance_create_depth(0, 0, 0, o_Cursor);
+	
 	
 	#endregion
-	
 	
 }

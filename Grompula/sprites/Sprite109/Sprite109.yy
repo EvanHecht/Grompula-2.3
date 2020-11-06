@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"242ca9e2-67fe-4ec2-83ca-ac5419c64602","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Main Menu",
-    "path": "folders/Sprites/Menu Sprites/Main Menu.yy",
+    "name": "Legacy",
+    "path": "folders/Sprites/Menu Sprites/Main Menu/Legacy.yy",
   },
   "resourceVersion": "1.0",
   "name": "Sprite109",

@@ -1,16 +1,13 @@
 /// @description scr_upgrade_trigger_finger(target_player)
 /// @param target_player
-function scr_upgrade_trigger_finger(argument0) {
+function scr_upgrade_trigger_finger(target_player) {
 
-	//Retrieve the player to apply the upgrade to
-	var target_player = argument0;
-
-	//Calculate the amount the movment speed should increase
+	//Determine how much to increase fire rate by
 	var increase_factor = .25;
-
-	//Increase the target player's movement speed
-	target_player.stat_fire_rate += increase_factor;
+	var increase_amount = get_player_stat_base_value("fire rate", target_player.player) * increase_factor;
 
 
+	//Increase target player's fire rate
+	modify_player_stat("fire rate", target_player.player, increase_amount);
 
 }

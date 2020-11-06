@@ -58,7 +58,7 @@ switch(state){
 			move_vertical[i] = -move_up[i] + move_down[i];
 			
 			//Move horizontal | right | left pressed
-			if(move_horizontal[i] != 0 && sign(move_horizontal_previous_frame[i]) != move_horizontal[i]){
+			if(move_horizontal[i] != 0 && sign(move_horizontal_previous_frame[i]) != sign(move_horizontal[i])){
 				move_horizontal_pressed[i] = sign(move_horizontal[i]);
 				move_right_pressed[i] = max(0, move_horizontal_pressed[i]);
 				move_left_pressed[i] = min(0, move_horizontal_pressed[i]);
@@ -69,7 +69,7 @@ switch(state){
 			}
 			
 			//Move vertical | down | up pressed
-			if(move_vertical[i] != 0 && sign(move_vertical_previous_frame[i]) != move_vertical[i]){
+			if(move_vertical[i] != 0 && sign(move_vertical_previous_frame[i]) != sign(move_vertical[i])){
 				move_vertical_pressed[i] = sign(move_vertical[i]);
 				move_down_pressed[i] = max(0, move_vertical_pressed[i]);
 				move_up_pressed[i] = min(0, move_vertical_pressed[i]);
@@ -95,8 +95,8 @@ switch(state){
 			select_pressed[i] = read_input(select_binding[i], true, current_device_index);
 		
 			//Store previous frame values for next frame
-			move_horizontal_previous_frame[i] = move_horizontal_pressed[i];
-			move_vertical_previous_frame[i] = move_vertical_pressed[i];
+			move_horizontal_previous_frame[i] = move_horizontal[i];
+			move_vertical_previous_frame[i] = move_vertical[i];
 			
 		}
 	}

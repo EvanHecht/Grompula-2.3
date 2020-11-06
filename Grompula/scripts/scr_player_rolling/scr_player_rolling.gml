@@ -2,14 +2,20 @@
 ///@Description Handles Player Movement
 function scr_player_rolling() {
 
-	//Rolling Speed Curve
+	
 
+	//Rolling Speed Curve
 	var current_rolling_speed;
 	if(image_index < 4) current_rolling_speed = rolling_speed;
 	else current_rolling_speed = rolling_speed/3.5;
 
 	var horizontal_movement_increment = current_rolling_speed * direction_moving_horizontal;
 	var vertical_movement_increment = current_rolling_speed * direction_moving_vertical;
+
+	//Set direction facing
+	if(horizontal_movement_increment != 0){
+		image_xscale = abs(image_xscale) * sign(horizontal_movement_increment);
+	}
 
 	//Move Horizontally
 	if(!place_meeting(x + horizontal_movement_increment, y, o_Collision)){
@@ -30,9 +36,6 @@ function scr_player_rolling() {
 		}
 	}
 
-	//Update Center Variables
-	center_x = x;
-	center_y = y - 45;
 
 
 }

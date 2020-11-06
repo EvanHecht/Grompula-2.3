@@ -11,9 +11,10 @@ if(ds_list_find_index(global.map_list, room) != -1){
 		var spawn_y = y + y_spawn_offset;
 		
 		//Spawn the players
-		o_GameController.create_args[0] = player_number;
-		instance_create_depth(spawn_x, spawn_y, -spawn_y, o_Player);
-		
+		if(o_GameController.current_number_of_players >= player_number){
+			o_GameController.create_args[0] = player_number;
+			instance_create_depth(spawn_x, spawn_y, -spawn_y, o_Player);
+		}
 	}
 	
 	//Create the camera (Players required for camera to work properly)

@@ -4,7 +4,7 @@ player_1_use_keyboard = true;
 state = "input processing";
 
 //debugging
-debug = false;
+debug = true;
 last_key_pressed = "";
 
 #region Assign Controllers To Slots & Gather Information About Them
@@ -304,7 +304,8 @@ reload_default_keyboard = "r";
 switch_weapons_default_keyboard = "q";
 character_action_default_keyboard = "space";
 select_default_keyboard = "e";
-back_default_keyboard = "escape";
+back_default_keyboard = "backspace";
+pause_default_keyboard = "escape"
 
 //Default Controller Controls
 move_left_default_controller = "left stick horizontal negative";
@@ -318,6 +319,7 @@ switch_weapons_default_controller = "face 4";
 character_action_default_controller = "right bumper";
 select_default_controller = "face 1";
 back_default_controller = "face 2";
+pause_default_controller = "start"
 
 //Open The Control Config File
 ini_open(controls_config);
@@ -339,6 +341,7 @@ for(var slot = 0; slot <= number_of_controller_slots; slot++){
 		character_action_binding[slot] = ini_write_string("Keyboard Controls", "character_action", character_action_default_keyboard);
 		select_binding[slot] = ini_write_string("Keyboard Controls", "select", select_default_keyboard);
 		back_binding[slot] = ini_write_string("Keyboard Controls", "back", back_default_keyboard);
+		pause_binding[slot] = ini_write_string("Keyboard Controls", "pause", pause_default_keyboard);
 	}
 	
 	//Load Controller Bindings (Slot 1-4)
@@ -354,6 +357,7 @@ for(var slot = 0; slot <= number_of_controller_slots; slot++){
 		character_action_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "character_action", character_action_default_controller);
 		select_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "select", select_default_controller);
 		back_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "back", back_default_controller);
+		back_binding[slot] = ini_write_string("Player " + string(slot) + " Controls", "pause", pause_default_controller);
 	}
 	
 }
@@ -376,6 +380,7 @@ for(var slot = 0; slot <= number_of_controller_slots; slot++){
 		character_action_binding[slot] = ini_read_string("Keyboard Controls", "character_action", character_action_default_keyboard);
 		select_binding[slot] = ini_read_string("Keyboard Controls", "select", select_default_keyboard);
 		back_binding[slot] = ini_read_string("Keyboard Controls", "back", back_default_keyboard);
+		back_binding[slot] = ini_read_string("Keyboard Controls", "pause", pause_default_keyboard);
 	}
 	
 	//Load Controller Bindings (Slot 1-4)
@@ -391,6 +396,7 @@ for(var slot = 0; slot <= number_of_controller_slots; slot++){
 		character_action_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "character_action", character_action_default_controller);
 		select_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "select", select_default_controller);
 		back_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "back", back_default_controller);
+		back_binding[slot] = ini_read_string("Player " + string(slot) + " Controls", "pause", pause_default_controller);
 	}
 	
 }
@@ -438,10 +444,7 @@ for(var i = 1; i <= max_number_of_players; i++){
 	
 }
 
-
 //Set Deadzones
 for(i = controller_slot_min; i <= controller_slot_max; i++){
 	gamepad_set_axis_deadzone(i, .15);	
 }
-
-

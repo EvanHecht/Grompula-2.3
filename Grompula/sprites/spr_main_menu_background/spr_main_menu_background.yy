@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"dfc80319-bad1-4198-a082-b7ccf7b57496","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Main Menu",
-    "path": "folders/Sprites/Menu Sprites/Main Menu.yy",
+    "name": "Legacy",
+    "path": "folders/Sprites/Menu Sprites/Main Menu/Legacy.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_main_menu_background",

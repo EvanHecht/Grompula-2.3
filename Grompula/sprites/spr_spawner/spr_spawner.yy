@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_spawner","path":"sprites/spr_spawner/spr_spawner.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_spawner",
     "tags": [],
     "resourceType": "GMSequence",
   },

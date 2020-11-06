@@ -1,7 +1,7 @@
 if(debug){
 
-if(mouse_check_button(mouse_lastbutton)){
-	last_key_pressed = keycode_to_keyname(mouse_lastbutton);
+if(keyboard_check(vk_anykey)){
+	last_key_pressed = keycode_to_keyname(keyboard_lastkey);
 }
 
 draw_set_color(c_white);

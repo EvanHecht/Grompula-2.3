@@ -3,17 +3,20 @@ cost = 10;
 interaction_range = 64;
 player_in_range = false;
 purchased = false;
+closest_player = -1;
 purchasing_player = -1;
+state = "spawn";
 
 //Ui Variables
 ui_draw_x = x;
 ui_draw_y = y - 150;
 ui_alpha = 0;
 ui_fade_speed = .1;
-
-state = "spawn";
 shifted = false;
 fade_phase = 1;
+ui_message = "";
+
+
 
 /* 
 	Glyph Type

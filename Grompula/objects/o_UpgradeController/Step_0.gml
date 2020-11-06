@@ -19,7 +19,7 @@ switch(state){
 				
 				//Clear current upgrade list and add random available upgrades to be offered
 				ds_list_clear(current_upgrade_offer_list);
-				var number_of_upgrades_to_select = scr_get_player(current_player_selecting).stat_upgrade_panels;
+				var number_of_upgrades_to_select = 3;
 				var number_of_upgrades_available = ds_list_size(upgrade_list);
 				for(var i = 0; i < number_of_upgrades_to_select; i++){
 						
@@ -47,7 +47,7 @@ switch(state){
 				var increment = o_InputController.move_horizontal_pressed[current_player_selecting];
 				if(increment != 0){
 					current_panel_selection += increment;
-					current_panel_selection = clamp(current_panel_selection, 1, scr_get_player(current_player_selecting).stat_upgrade_panels);
+					current_panel_selection = clamp(current_panel_selection, 1, scr_get_player(current_player_selecting).upgrade_panels);
 				}
 			
 				//Select Upgrade

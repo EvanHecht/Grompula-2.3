@@ -1,17 +1,12 @@
 /// @description scr_upgrade_agility(target_player)
 /// @param target_player
-function scr_upgrade_agility(argument0) {
-
-	//Retrieve the player to apply the upgrade to
-	var target_player = argument0;
+function scr_upgrade_agility(target_player) {
 
 	//Calculate the amount the movment speed should increase
 	var increase_factor = .25;
-	var movement_speed_increase_amount = target_player.stat_movement_speed * increase_factor;
+	var increase_amount = get_player_stat_base_value("movement speed", target_player.player) * increase_factor;
 
 	//Increase the target player's movement speed
-	target_player.stat_movement_speed += movement_speed_increase_amount;
-
-
+	modify_player_stat("movement speed", target_player.player, increase_amount);
 
 }

@@ -180,8 +180,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ec950d15-348e-4a39-89f7-3b8b31630c66","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Glyph Sprites",
-    "path": "folders/Sprites/Glyph Sprites.yy",
+    "name": "Weapon Glyph",
+    "path": "folders/Sprites/Glyph Sprites/Weapon Glyph.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_glyph_purchased",

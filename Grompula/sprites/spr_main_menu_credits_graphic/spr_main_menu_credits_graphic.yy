@@ -112,8 +112,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9d1d57fa-c66b-498b-a545-56d6121ce763","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Main Menu",
-    "path": "folders/Sprites/Menu Sprites/Main Menu.yy",
+    "name": "Legacy",
+    "path": "folders/Sprites/Menu Sprites/Main Menu/Legacy.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_main_menu_credits_graphic",

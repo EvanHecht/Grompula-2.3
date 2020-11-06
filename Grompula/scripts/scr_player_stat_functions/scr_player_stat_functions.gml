@@ -59,7 +59,7 @@ function player_stat_setup(){
 		player_stat_define("damage", i, 1, .01, 99999); //Damage
 		player_stat_define("penetration", i, 0, 0, 99999); //Penetration
 		player_stat_define("fire rate", i, 1, .01, 99999); //Fire Rate
-		player_stat_define("reload speed", i, 1, .01, 99999); //Reload Speed
+		player_stat_define("reloading speed", i, 1, .01, 99999); //Reload Speed
 		player_stat_define("rolling speed", i, 20, .1, 100); //Rolling Speed
 		player_stat_define("iframes", i, 120, 0, 99999); //Iframes
 		
@@ -82,10 +82,77 @@ function player_stat_setup(){
 	
 }
 
+
+//-----------------------[GETTERS]----------------------------
 ///@description Returns the current value of the desired stat
 function get_player_stat(stat_name, player){
 	
 	var index = ds_list_find_index(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 0, 0), stat_name);
 	return ds_list_find_value(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 4, 0), index);
+	
+}
+
+///@description Returns the current base value of the desired stat
+function get_player_stat_base_value(stat_name, player){
+	
+	var index = ds_list_find_index(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 0, 0), stat_name);
+	return ds_list_find_value(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 1, 0), index);
+	
+}
+	
+///@description Returns the current min value of the desired stat
+function get_player_stat_min_value(stat_name, player){
+	
+		
+	var index = ds_list_find_index(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 0, 0), stat_name);
+	return ds_list_find_value(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 2, 0), index);
+	
+}
+	
+///@description Returns the current max value of the desired stat
+function get_player_stat_max_value(stat_name, player){
+	
+	var index = ds_list_find_index(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 0, 0), stat_name);
+	return ds_list_find_value(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 3, 0), index);
+	
+}
+	
+		
+//-----------------------[SETTERS]----------------------------
+///@description Sets the current value of the desired stat
+function set_player_stat(stat_name, player, value){
+	
+	var index = ds_list_find_index(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 0, 0), stat_name);
+	ds_list_set(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 4, 0), index, value);
+	
+}
+
+///@description Sets the current min value of the desired stat
+function set_player_stat_min_value(stat_name, player, value){
+	
+		
+	var index = ds_list_find_index(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 0, 0), stat_name);
+	ds_list_set(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 2, 0), index, value);
+	
+}
+	
+///@description Sets the current max value of the desired stat
+function set_player_stat_max_value(stat_name, player, value){
+		
+	var index = ds_list_find_index(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 0, 0), stat_name);
+	ds_list_set(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 3, 0), index, value);
+	
+}
+
+
+//-----------------------[MODIFIERS]----------------------------
+///@description Changes the desired stat by the specified value
+function modify_player_stat(stat_name, player, value){
+	
+	var index = ds_list_find_index(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 0, 0), stat_name);
+	var original_value = ds_list_find_value(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 4, 0), index);
+	var new_value = original_value + value;
+	ds_list_set(ds_grid_get(ds_grid_get(global.player_stat_grid, player, 0), 4, 0), index, new_value);
+	return new_value;
 	
 }

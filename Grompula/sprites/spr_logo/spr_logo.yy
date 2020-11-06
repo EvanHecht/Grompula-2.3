@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 27,
-  "bbox_right": 607,
-  "bbox_top": 23,
-  "bbox_bottom": 121,
+  "bbox_left": 0,
+  "bbox_right": 3447,
+  "bbox_top": 0,
+  "bbox_bottom": 2039,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 640,
-  "height": 128,
+  "width": 3448,
+  "height": 2040,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"48aab198-a1d2-4658-8135-2bbc19a8e303","path":"sprites/spr_logo/spr_logo.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"48aab198-a1d2-4658-8135-2bbc19a8e303","path":"sprites/spr_logo/spr_logo.yy",},"LayerId":{"name":"6e7a41b9-3648-4902-b085-14c8249d8913","path":"sprites/spr_logo/spr_logo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"resourceVersion":"1.0","name":"48aab198-a1d2-4658-8135-2bbc19a8e303","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"89a8fc28-cec7-4d59-84d9-dcf8089778e9","path":"sprites/spr_logo/spr_logo.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"89a8fc28-cec7-4d59-84d9-dcf8089778e9","path":"sprites/spr_logo/spr_logo.yy",},"LayerId":{"name":"869e888d-78cf-45db-870a-aaf7b1db2ef6","path":"sprites/spr_logo/spr_logo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"resourceVersion":"1.0","name":"89a8fc28-cec7-4d59-84d9-dcf8089778e9","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"96d2d3f1-7340-481a-b1a3-08f3fff913aa","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"48aab198-a1d2-4658-8135-2bbc19a8e303","path":"sprites/spr_logo/spr_logo.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"760a5117-2c4e-4279-9576-067d3a1608bd","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"89a8fc28-cec7-4d59-84d9-dcf8089778e9","path":"sprites/spr_logo/spr_logo.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -65,11 +65,11 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6e7a41b9-3648-4902-b085-14c8249d8913","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"869e888d-78cf-45db-870a-aaf7b1db2ef6","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Menu Sprites",
-    "path": "folders/Sprites/Menu Sprites.yy",
+    "name": "Legacy",
+    "path": "folders/Sprites/Menu Sprites/Main Menu/Legacy.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_logo",

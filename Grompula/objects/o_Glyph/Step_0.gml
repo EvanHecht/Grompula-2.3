@@ -33,6 +33,7 @@ switch(state){
 		
 				//Indicate that the player is in range
 				player_in_range = true;
+				closest_player = current_player;
 		
 				//Player purchasing
 				if(!purchased && o_InputController.select_pressed[i] && current_player.soul_count >= cost){
@@ -42,6 +43,8 @@ switch(state){
 					state = "purchased";
 				}
 		
+			} else {
+				closest_player = -1;	
 			}
 
 		}
@@ -80,8 +83,14 @@ switch(state){
 			var heal_amount = 3;
 		
 			//Heal Player
-			purchasing_player.hp = approach(purchasing_player.hp, purchasing_player.stat_hp, heal_amount); 
-		
+			purchasing_player.hp = approach(purchasing_player.hp, get_player_stat("hp", purchasing_player.player), heal_amount); 
+			
+			//Create particles
+			var num_of_particles = 20;
+			for(var i = 0; i < num_of_particles; i++){
+				instance_create_depth(x, y, depth, o_HealthParticle);	
+			}
+			
 		break;
 	}
 	

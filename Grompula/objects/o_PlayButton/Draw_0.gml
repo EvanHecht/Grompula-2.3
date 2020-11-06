@@ -1,0 +1,1 @@
+draw_sprite_ext(spr_play_button, 0, graphic_x, y, image_xscale, image_yscale, 0, c_white, 1);
